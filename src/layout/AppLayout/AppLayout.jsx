@@ -5,7 +5,8 @@ import Footer from "../Footer/Footer";
 const AppLayout = () => {
   return (
     <div>
-      Navbar
+      <div style={{ backgroundColor: "gray" }}>Navbar</div>
+
       {/* "/" 안에 있는 자손 페이지들 */}
       <Outlet />
       <Footer />
