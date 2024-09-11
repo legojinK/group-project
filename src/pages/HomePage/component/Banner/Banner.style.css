@@ -1,0 +1,47 @@
+/* .slide img {
+  width: 60%;
+  height: 60%;
+  border-radius: 30px;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@font-face {
+  font-family: "Ownglyph_meetme-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/Ownglyph_meetme-Rg.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.carousel-item {
+  position: relative;
+  font-family: "Ownglyph_meetme-Rg", sans-serif;
+}
+
+.banner {
+  border-radius: 30px;
+  height: 480px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
+}
+
+.banner-text {
+  position: absolute;
+  max-width: 390px;
+  right: 0; /* 오른쪽 끝에 위치 */
+  top: 50%; /* 세로 중앙에 위치 */
+  text-align: right; /* 텍스트 오른쪽 정렬 */
+}
+
+.banner-text h2 {
+  font-size: 50px;
+}
+
+.banner-text span {
+  font-size: 30px;
+}

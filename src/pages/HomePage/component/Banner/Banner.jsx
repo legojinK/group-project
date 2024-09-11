@@ -1,8 +1,10 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import "./Banner.style.css";
 
+import { Row, Container, Carousel } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+// 배너에 들어갈 이미지와 텍스트
 const landings = [
   {
     img: "https://www.animal.go.kr/front/fileMng/imageView.do;jsessionid=2alKSGHJr1KuSfTxGk1l92BsXKjLoaagpBaU1tAkReLF38Z3zqD6Is1eyDfzdAme.aniwas_servlet_front?f=/2024/6/20262",
@@ -27,33 +29,32 @@ const landings = [
   },
 ];
 
-const landingSettings = {
-  dots: false,
-  infinite: true, //무한 순환
-  speed: 1000,
-  slidesToShow: 1, // 한번에 1개 보여줌
-  slidesToScroll: 1, // 한번에 1개 넘어감
-  autoplay: true, // 자동 슬라이드
-  autoplaySpeed: 3000, // 자동 속도
-  cssEase: "linear", // 일정 속도
-};
-
 const Banner = () => {
   return (
-    <div className="landing-slider">
-      <Slider {...landingSettings}>
-        {landings.map((land, index) => (
-          <div key={index} className="slide">
-            <img src={land.img} alt="banner-img" />
-
-            <div className="slide-text">
-              <h2>{land.text}</h2>
-              <span>{land.subText}</span>
-            </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+    <Container>
+      <Row>
+        <Carousel controls={false}>
+          {/* 위 데이터(landings)를 토대로 Carousel에 이미지와 텍스트 넣기 */}
+          {landings.map((item, index) => (
+            <Carousel.Item key={index} className="carousel-item">
+              {/* 이미지 */}
+              <div
+                className="banner"
+                style={{
+                  backgroundImage: `url(${item.img})`,
+                }}
+              >
+                {/* 텍스트 */}
+                <div className="banner-text">
+                  <h2>{item.text}</h2>
+                  <span>{item.subText}</span>
+                </div>
+              </div>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </Row>
+    </Container>
   );
 };
 
