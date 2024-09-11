@@ -31,9 +31,9 @@ const landings = [
 
 const Banner = () => {
   return (
-    <Container>
+    <Container className="container-custom">
       <Row>
-        <Carousel controls={false}>
+        <Carousel pause="false">
           {/* 위 데이터(landings)를 토대로 Carousel에 이미지와 텍스트 넣기 */}
           {landings.map((item, index) => (
             <Carousel.Item key={index} className="carousel-item">
