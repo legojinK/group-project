@@ -5,12 +5,6 @@ export const loginWithEmail = createAsyncThunk(
     "user/loginWithEmail",
     async ({ email, password }, { rejectWithValue }) => {}
 );
-
-export const loginWithGoogle = createAsyncThunk(
-    "user/loginWithGoogle",
-    async (token, { rejectWithValue }) => {}
-);
-
 export const logout = () => (dispatch) => {
 
 };
