@@ -1,0 +1,77 @@
+.home-animal-search {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  background-color: #e1f1f0;
+  box-sizing: border-box;
+  width: 65%;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.gradient-box-left {
+  background: linear-gradient(to right, rgba(225, 241, 240, 1), transparent);
+  position: absolute;
+  left: 0;
+  width: 70px;
+  height: 100%;
+  z-index: 10;
+}
+
+.gradient-box-right {
+  background: linear-gradient(to left, rgba(225, 241, 240, 1), transparent);
+  position: absolute;
+  right: 0;
+  width: 70px;
+  height: 100%;
+  z-index: 10;
+}
+
+.home-animal-search-description {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 2rem 2rem 1rem 2rem;
+  gap: 1.5rem;
+}
+
+.home-animal-search-title {
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: black;
+  letter-spacing: .1rem;
+}
+
+.home-animal-search-content {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: gray;
+}
+
+@media screen and (max-width: 1200px) {
+  .home-animal-search-description {
+    margin: 2rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-animal-search {
+    width: 100%;
+  }
+
+  .home-animal-search-title {
+    font-size: 2rem;
+  }
+
+  .home-animal-search-content {
+    font-size: 1rem;
+  }
+}
