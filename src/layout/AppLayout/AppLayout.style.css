@@ -1,4 +1,4 @@
-/* --------------------Navbar start--------------------- */
+/* --------------------bootstrap nav start--------------------- */
 .bg-body-tertiary.navbar.navbar-expand-lg.navbar-light {
   background-color: #e0f2f1 !important;
   padding: 0;
@@ -38,11 +38,15 @@
   border-radius: 20px;
   padding: 0 20px;
 }
+/*  */
+.nav-item.dropdown:hover .dropdown-toggle.nav-link {
+  color: #009688;
+}
 
 .dropdown-toggle.nav-link {
   font-size: 20px;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  color: #009688;
+  color: #4db6ac;
 }
 
 .dropdown-toggle.show.nav-link {
@@ -54,7 +58,7 @@
   border-radius: 20px;
   border: 1px solid #009688;
   overflow: hidden;
-  background-color: #e0f2f1 !important;
+  background-color: #f2fffe !important;
 }
 
 .dropdown-item {
