@@ -87,12 +87,13 @@ const AppLayout = () => {
                 // style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                {menuItems.map((item) => {
+                {menuItems.map((item, outerIdx) => {
                   return (
-                    <NavDropdown title={item.title}>
-                      {item.contents.map((content) => {
+                    <NavDropdown title={item.title} key={outerIdx}>
+                      {item.contents.map((content, innerIdx) => {
                         return (
                           <NavDropdown.Item
+                            key={innerIdx}
                             onClick={() => navigate(`${content.path}`)}
                           >
                             {content.content}
