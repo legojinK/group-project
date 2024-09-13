@@ -1,30 +1,30 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container, Form, Row, Col, Card } from 'react-bootstrap';
-import './LoginPage.style.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { login, setLoginError } from '@features/User/AuthReducer';
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Container, Form, Row, Col, Card } from "react-bootstrap";
+import "./LoginPage.style.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { login, setLoginError } from "@features/User/AuthReducer";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { loginError } = useSelector(state => state.auth);
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = event => {
     event.preventDefault();
 
     // 로그인 로직 (이메일/비밀번호가 맞는지 체크)
-    if (email === 'test@gmail.com' && password === 'pw123123') {
+    if (email === "test@gmail.com" && password === "pw123123") {
       dispatch(login({ email, password }));
-      navigate('/');
+      navigate("/");
     } else {
-      dispatch(setLoginError('이메일 또는 비밀번호가 잘못되었습니다.')); // 에러 설정
-      setEmail('');
-      setPassword('');
+      dispatch(setLoginError("이메일 또는 비밀번호가 잘못되었습니다.")); // 에러 설정
+      setEmail("");
+      setPassword("");
     }
   };
 
@@ -58,7 +58,7 @@ const LoginPage = () => {
                     />
                   </Form.Group>
 
-                  {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
+                  {loginError && <p style={{ color: "red" }}>{loginError}</p>}
 
                   <div className="button-container">
                     <Button
