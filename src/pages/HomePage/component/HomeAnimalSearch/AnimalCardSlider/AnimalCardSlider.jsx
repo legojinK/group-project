@@ -35,9 +35,16 @@ const responsive = {
 };
 
 const AnimalCardSlider = () => {
+  const selectedDateFrom = 20240101;
+  const selectedDateTo = `${new Date().getFullYear()}${String(new Date().getMonth() + 1).padStart(2, '0')}${String(new Date().getDate()).padStart(2, '0')}`;
+  const selectedSido = "";
+  const selectedSigungu = "";
+  const selectedShelter = "";
+  const selectedKind = "";
+  const selectedDetailKind = "";
 
   // useAnimalCardDataQuery를 사용하여 유기동물 데이터 조회
-  const { data: AnimalCardData, isLoading, isError, error } = useAnimalCardDataQuery();
+  const { data: AnimalCardData, isLoading, isError, error } = useAnimalCardDataQuery({selectedDateFrom, selectedDateTo, selectedSido, selectedSigungu, selectedShelter, selectedKind, selectedDetailKind});
   console.log("AnimalCardData", AnimalCardData);
 
   // 로딩 중일 때
@@ -61,7 +68,7 @@ const AnimalCardSlider = () => {
       autoPlaySpeed={7000}
       itemClass="custom-carousel-item"
     >
-      {AnimalCardData?.items.item.map((animal, index) => {
+      {AnimalCardData.items.item?.map((animal, index) => {
         return <AnimalCard animal={animal} key={index} />;
       })}
     </Carousel>

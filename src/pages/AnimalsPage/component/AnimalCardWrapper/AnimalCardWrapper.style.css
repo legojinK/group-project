@@ -1,0 +1,14 @@
+.animal-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.animal-card-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  justify-content: center;
+  justify-items: center;
+  gap: 1rem;
+}
