@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  background-color: #e1f1f0;
+  background-color: white;
   box-sizing: border-box;
   width: 65%;
   border-radius: 10px;
@@ -13,7 +13,7 @@
 }
 
 .gradient-box-left {
-  background: linear-gradient(to right, rgba(225, 241, 240, 1), transparent);
+  background: linear-gradient(to right, rgba(255, 255, 255, 1), transparent);
   position: absolute;
   left: 0;
   width: 70px;
@@ -22,7 +22,7 @@
 }
 
 .gradient-box-right {
-  background: linear-gradient(to left, rgba(225, 241, 240, 1), transparent);
+  background: linear-gradient(to left, rgba(255, 255, 255, 1), transparent);
   position: absolute;
   right: 0;
   width: 70px;
@@ -33,9 +33,12 @@
 .home-animal-search-description {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   margin: 2rem 2rem 1rem 2rem;
-  gap: 1.5rem;
+  gap: 2rem;
+  border: 3px solid #b2dfdb;
+  border-radius: 10px;
+  z-index: 20;
 }
 
 .home-animal-search-title {
@@ -58,11 +61,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: .5rem;
+    gap: 0rem;
+    padding: .5rem 0;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .home-animal-search {
     width: 100%;
   }

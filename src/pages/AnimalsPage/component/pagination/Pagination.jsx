@@ -40,12 +40,15 @@ const Pagination = () => {
           breakLabel="..."
           nextLabel=">"
           onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
+          pageRangeDisplayed={2}
+          marginPagesDisplayed={1}
           pageCount={pageCount}
           previousLabel="<"
           renderOnZeroPageCount={null}
           activeClassName="selected"
           disabledClassName="disabled"
+          previousClassName="react-paginate-previous-custom"
+          nextClassName="react-paginate-next-custom"
           forcePage={pageNo - 1}
         />
       )}

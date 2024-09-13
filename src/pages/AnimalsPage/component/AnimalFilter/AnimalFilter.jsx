@@ -17,6 +17,8 @@ import {
   setUpdateData,
 } from "@/store/redux/animalSearchSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const AnimalFilter = () => {
   const dispatch = useDispatch();
@@ -28,7 +30,9 @@ const AnimalFilter = () => {
   // 선택한 시군구 데이터
   const { data: sigunguData, refetch: refetchSigunguData } =
     useSigunguSearchQuery({ selectedSido });
-  const selectedSigungu = useSelector((state) => state.animalSearch.selectedSigungu);
+  const selectedSigungu = useSelector(
+    (state) => state.animalSearch.selectedSigungu
+  );
 
   // 선택한 보호소 데이터
   const { data: shelterData, refetch: refetchShelterData } =
@@ -39,7 +43,9 @@ const AnimalFilter = () => {
 
   // 선택한 축종 데이터
   const selectedKind = useSelector((state) => state.animalSearch.selectedKind);
-  const { data: kindData, refetch: refetchKindData } = useKindSearchQuery({ selectedKind });
+  const { data: kindData, refetch: refetchKindData } = useKindSearchQuery({
+    selectedKind,
+  });
 
   // selectedSido가 바뀔 때마다 sigunguData를 다시 가져오는 useEffect
   useEffect(() => {
@@ -59,9 +65,9 @@ const AnimalFilter = () => {
   }, [selectedSigungu, refetchShelterData]);
 
   useEffect(() => {
-      // kindData refetch
-      // console.log("selectedKind", selectedKind);
-      refetchKindData();
+    // kindData refetch
+    // console.log("selectedKind", selectedKind);
+    refetchKindData();
   }, [selectedKind, refetchKindData]);
 
   // date from이 바뀔 때마다 selectedDateFrom을 바꿔주는 함수
@@ -71,7 +77,6 @@ const AnimalFilter = () => {
     const formattedDate = date.replace(/-/g, "");
     dispatch(setSelectedDateFrom(formattedDate));
   };
-
 
   // date to가 바뀔 때마다 selectedDateTo을 바꿔주는 함수
   const handleDateToChange = (e) => {
@@ -119,66 +124,105 @@ const AnimalFilter = () => {
   return (
     <div className="animals-page-filter">
       <div className="filter-date">
-        <label htmlFor="data-from">날짜</label>
-        <input type="date" id="date-from" onChange={handleDateFromChange}/>
-        ~
-        <input type="date" id="date-to" onChange={handleDateToChange}/>
-        <span className="filter-date-last">(접수일 기준)</span>
+        <div className="form-group">
+          <div className="form-group-title">
+            <label htmlFor="data-from">날짜</label>
+          </div>
+          <div className="form-group-content">
+            <input type="date" id="date-from" onChange={handleDateFromChange} />
+            <div className="from-to-sign">~</div>
+            <input type="date" id="date-to" onChange={handleDateToChange} />
+          </div>
+        </div>
       </div>
       <div className="filter-location">
-        <label htmlFor="location-sido">시도</label>
-        <select id="location-sido" onChange={handleSidoChange}>
-          <option value="">전체</option>
-          {sidoData?.items.item.map((sido, index) => (
-            <option key={index} value={sido?.orgCd}>
-              {sido.orgdownNm}
-            </option>
-          ))}
-        </select>
-        <label htmlFor="location-sigungu">시군구</label>
-        <select id="location-sigungu" onChange={handleSigunguChange}>
-          <option value="">전체</option>
-          {sigunguData?.items.item.map((sigungu, index) => (
-            <option key={index} value={sigungu?.orgCd}>
-              {sigungu.orgdownNm}
-            </option>
-          ))}
-        </select>
-        <label htmlFor="location-shelters">보호센터</label>
-        <select id="location-shelters" onChange={handleShelterChange}>
-          <option value="">전체</option>
-          {shelterData?.items.item.map((shelter, index) => (
-            <option key={index} value={shelter?.careRegNo}>
-              {shelter?.careNm}
-            </option>
-          ))}
-        </select>
+        <div className="form-group">
+          <div className="form-group-title">
+            <label htmlFor="location-sido">시도</label>
+          </div>
+          <div className="form-group-content">
+            <select id="location-sido" onChange={handleSidoChange}>
+              <option value="">전체</option>
+              {sidoData?.items.item.map((sido, index) => (
+                <option key={index} value={sido?.orgCd}>
+                  {sido.orgdownNm}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div className="form-group">
+          <div className="form-group-title">
+            <label htmlFor="location-sigungu">시군구</label>
+          </div>
+          <div className="form-group-content">
+            <select id="location-sigungu" onChange={handleSigunguChange}>
+              <option value="">전체</option>
+              {sigunguData?.items.item.map((sigungu, index) => (
+                <option key={index} value={sigungu?.orgCd}>
+                  {sigungu.orgdownNm}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div className="form-group">
+          <div className="form-group-title">
+            <label htmlFor="location-shelters">보호센터</label>
+          </div>
+          <div className="form-group-content">
+            <select id="location-shelters" onChange={handleShelterChange}>
+              <option value="">전체</option>
+              {shelterData?.items.item.map((shelter, index) => (
+                <option key={index} value={shelter?.careRegNo}>
+                  {shelter?.careNm}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
       </div>
       <div className="filter-kind">
-        <label htmlFor="kind">축종 및 품종</label>
-        <select id="kind" onChange={handleKindChange}>
-          <option value="">전체</option>
-          <option value="417000">개</option>
-          <option value="422400">고양이</option>
-          <option value="429900">기타</option>
-        </select>
-        <select id="detail-kind" onChange={handleDetailKindChange}>
-          <option value="">전체</option>
-          {kindData?.items.item.map((kind, index) => (
-            <option key={index} value={kind?.kindCd}>
-              {kind.knm}
-            </option>
-          ))}
-        </select>
-        <label htmlFor="neutralized">중성화 여부</label>
-        <select id="neutralized" onChange={handleNeuterChange}>
-          <option value="">전체</option>
-          <option value="Y">예</option>
-          <option value="N">아니오</option>
-          <option value="U">미상</option>
-        </select>
+        <div className="form-group">
+          <div className="form-group-title">
+            <label htmlFor="kind">축종 및 품종</label>
+          </div>
+          <div className="form-group-content">
+            <select id="kind" onChange={handleKindChange}>
+              <option value="">전체</option>
+              <option value="417000">개</option>
+              <option value="422400">고양이</option>
+              <option value="429900">기타</option>
+            </select>
+            <select id="detail-kind" onChange={handleDetailKindChange}>
+              <option value="">전체</option>
+              {kindData?.items.item.map((kind, index) => (
+                <option key={index} value={kind?.kindCd}>
+                  {kind.knm}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <div className="form-group">
+          <div className="form-group-title">
+            <label htmlFor="neutralized">중성화 여부</label>
+          </div>
+          <div className="form-group-content">
+            <select id="neutralized" onChange={handleNeuterChange}>
+              <option value="">전체</option>
+              <option value="Y">예</option>
+              <option value="N">아니오</option>
+              <option value="U">미상</option>
+            </select>
+          </div>
+        </div>
       </div>
-      <button className="search-button" onClick={handleSearchButtonClick}>조회</button>
+      <div className="filter-divide-line"></div>
+      <button className="search-button" onClick={handleSearchButtonClick}>
+        <FontAwesomeIcon icon={faSearch} className="filter-search-icon" />
+        조회
+      </button>
     </div>
   );
 };

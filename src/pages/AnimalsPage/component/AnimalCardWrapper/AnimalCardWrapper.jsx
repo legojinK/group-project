@@ -70,11 +70,13 @@ const AnimalCardWrapper = () => {
 
     console.log("data refetch");
     fetchData();
-  }, [pageNo, updateData, animalCardData?.totalCount, refetchAnimalCardData, dispatch]);
-
-  if (isLoading || isPageLoading) {
-    return <div className="loading-box">로딩 중...</div>;
-  }
+  }, [
+    pageNo,
+    updateData,
+    animalCardData?.totalCount,
+    refetchAnimalCardData,
+    dispatch,
+  ]);
 
   if (isError) {
     return <div className="error-box">에러 발생: {error.message}</div>;
@@ -82,10 +84,21 @@ const AnimalCardWrapper = () => {
 
   return (
     <div className="animal-card-container">
+      <div className="animal-card-count">
+        총{" "}
+        <span className="count-number">
+          {animalCardData?.totalCount === 0 ? 0 : animalCardData?.totalCount.toLocaleString()}
+        </span>
+        건
+      </div>
       <div className="animal-card-wrapper">
-        {animalCardData?.items.item.map((animal, index) => (
-          <AnimalCard key={index} animal={animal} />
-        ))}
+        {isLoading || isPageLoading
+          ? Array.from({ length: 12 }).map((_, index) => (
+              <div key={index} className="skeleton-card"></div>
+            ))
+          : animalCardData?.items.item.map((animal, index) => (
+              <AnimalCard key={index} animal={animal} />
+            ))}
       </div>
     </div>
   );

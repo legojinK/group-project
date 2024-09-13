@@ -85,7 +85,7 @@
   width: 60px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 992px) {
   .animal-card {
     width: 180px;
   }
@@ -117,5 +117,15 @@
     font-size: 1rem;
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .animal-card {
+    width: 250px;
+  }
+
+  .animal-card .animal-card__image {
+    height: 250px;
   }
 }

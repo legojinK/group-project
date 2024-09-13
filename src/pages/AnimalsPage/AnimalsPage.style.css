@@ -7,13 +7,33 @@
 .animals-page-title {
   width: 100%;
   height: 300px;
-  background-color: #e0f7fa;
+  background-image: url('https://cdn.imweb.me/thumbnail/20200818/64328f7438330.jpg');
+  background-repeat: no-repeat;
+  background-position: 30% 30%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  font-size: 3.5rem;
-  letter-spacing: .1rem;
+  font-size: 4rem;
+  letter-spacing: .2rem;
+  position: relative;
+  color: white;
+}
+
+.animals-page-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 1;
+}
+
+.animals-page-title > * {
+  position: relative;
+  z-index: 2;
 }
 
 .animals-page-content {
@@ -23,22 +43,31 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 2.5rem 1rem;
+  padding: 5rem 1rem 2.5rem 1rem;
   box-sizing: border-box;
 }
 
 .animals-page-instruction-box {
-  width: calc(100% - 2rem - 6px);
+  width: 100%;
   border: 3px solid lightgray;
   padding: 1rem;
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .animals-page-info-icon {
   color: gray;
   font-size: 1.2rem;
   margin-right: .5rem;
+}
+
+@media screen and (max-width: 992px) {
+  .animals-page-title {
+    width: 100%;
+    height: 250px;
+    background-position: 40% 30%;
+    font-size: 3rem;
+  }
 }
