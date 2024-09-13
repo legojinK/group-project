@@ -55,16 +55,18 @@ const AnimalCardWrapper = () => {
 
   // animalCardData가 바뀔 때마다 totalCount를 redux에 저장
   useEffect(() => {
-    if (animalCardData?.totalCount) {
+    if (animalCardData) {
       dispatch(setTotalCount(animalCardData?.totalCount));
     }
-  }, [animalCardData?.totalCount, dispatch]);
+  }, [animalCardData, dispatch]);
 
   useEffect(() => {
     const fetchData = async () => {
       setIsPageLoading(true);
       await refetchAnimalCardData();
-      dispatch(setTotalCount(animalCardData?.totalCount));
+      if (animalCardData) {
+        dispatch(setTotalCount(animalCardData?.totalCount));
+      }
       setIsPageLoading(false);
     };
 
@@ -73,6 +75,7 @@ const AnimalCardWrapper = () => {
   }, [
     pageNo,
     updateData,
+    animalCardData,
     animalCardData?.totalCount,
     refetchAnimalCardData,
     dispatch,
@@ -87,7 +90,7 @@ const AnimalCardWrapper = () => {
       <div className="animal-card-count">
         총{" "}
         <span className="count-number">
-          {animalCardData?.totalCount === 0 ? 0 : animalCardData?.totalCount.toLocaleString()}
+          {animalCardData?.totalCount === 0 ? 0 : animalCardData?.totalCount?.toLocaleString()}
         </span>
         건
       </div>
@@ -96,7 +99,7 @@ const AnimalCardWrapper = () => {
           ? Array.from({ length: 12 }).map((_, index) => (
               <div key={index} className="skeleton-card"></div>
             ))
-          : animalCardData?.items.item.map((animal, index) => (
+          : animalCardData?.items?.item?.map((animal, index) => (
               <AnimalCard key={index} animal={animal} />
             ))}
       </div>

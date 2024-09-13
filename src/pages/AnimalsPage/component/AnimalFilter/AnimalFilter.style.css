@@ -7,10 +7,11 @@
   row-gap: 1rem;
   padding: 2rem 2rem 1.5rem 2rem;
   box-sizing: border-box;
-  background-color: rgba(224, 242, 241, 0.5);
+  background-color: rgb(246, 245, 245);
   font-family: 'Roboto', sans-serif;
   font-size: 1.4rem;
   margin-bottom: 5rem;
+  border: 3px solid #b2dfdb;
 }
 
 .animals-page-filter label {
@@ -104,7 +105,7 @@
 .search-button {
   width: 200px;
   padding: .8rem;
-  background-color: #009688;
+  background-color: #4db6ac;
   color: white;
   font-size: 1.5rem;
   font-weight: 600;

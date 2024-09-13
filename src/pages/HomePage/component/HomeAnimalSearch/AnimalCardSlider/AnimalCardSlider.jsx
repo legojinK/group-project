@@ -52,7 +52,7 @@ const AnimalCardSlider = () => {
   // useAnimalCardDataQuery를 사용하여 유기동물 데이터 조회
   const {
     data: AnimalCardData,
-    isLoading,
+    isLoading: isMainLoading,
     isError,
     error,
   } = useAnimalCardDataQuery({
@@ -81,11 +81,12 @@ const AnimalCardSlider = () => {
       autoPlaySpeed={7000}
       itemClass="custom-carousel-item"
     >
-      {isLoading
-        ? Array.from({ length: 10 }).map((_, index) => (
+      {isMainLoading
+        ? Array.from({ length: 12 }).map((_, index) => (
             <div key={index} className="skeleton-card"></div>
           ))
-        : AnimalCardData.items.item?.map((animal, index) => {
+        : AnimalCardData.items.item &&
+          AnimalCardData.items.item.map((animal, index) => {
             return <AnimalCard animal={animal} key={index} />;
           })}
     </Carousel>
