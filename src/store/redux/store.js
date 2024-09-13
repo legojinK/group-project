@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import animalSearchReducer from "./animalSearchSlice";
-import authReducer from "@features/User/AuthReducer";
+import authReducer from "@store/redux/AuthSlice";
 
 const store = configureStore({
   reducer: {

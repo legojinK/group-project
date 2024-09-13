@@ -4,7 +4,7 @@ import { Button, Container, Form, Row, Col, Card } from "react-bootstrap";
 import "./LoginPage.style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login, setLoginError } from "@features/User/AuthReducer";
+import { login, setLoginError } from "@store/redux/AuthSlice";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
