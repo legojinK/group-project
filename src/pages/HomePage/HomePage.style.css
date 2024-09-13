@@ -1,0 +1,13 @@
+.home-area {
+  background-color: #e0f2f1;
+}
+
+.banner-area {
+  height: 400px;
+}
+
+.card-area {
+  height: 600px;
+  background-color: #4db6ac;
+  border-radius: 20px;
+}
