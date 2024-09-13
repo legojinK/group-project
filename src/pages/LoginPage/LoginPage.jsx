@@ -9,7 +9,7 @@ import { login, setLoginError } from '@features/User/AuthReducer';
 const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loginError } = useSelector(state => state.auth); // 상태 가져오기
+  const { loginError } = useSelector(state => state.auth);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,10 +19,12 @@ const LoginPage = () => {
 
     // 로그인 로직 (이메일/비밀번호가 맞는지 체크)
     if (email === 'test@gmail.com' && password === 'pw123123') {
-      dispatch(login({ email })); // 로그인 성공 시 user 정보를 Redux 상태와 로컬 스토리지에 저장
+      dispatch(login({ email,password }));
       navigate('/');
     } else {
       dispatch(setLoginError('이메일 또는 비밀번호가 잘못되었습니다.')); // 에러 설정
+      setEmail('');
+      setPassword('');
     }
   };
 
