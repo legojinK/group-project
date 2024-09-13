@@ -1,0 +1,219 @@
+/* --------------------bootstrap nav start--------------------- */
+.bg-body-tertiary.navbar.navbar-expand-lg.navbar-light {
+  background-color: #e0f2f1 !important;
+  padding: 0;
+}
+
+.navbar.container-fluid {
+  /* justify-content: flex-start; */
+  padding: 20px;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.navbar-toggler {
+  padding: 0;
+  margin-left: 10px;
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  color: #009688;
+}
+
+.nav-item.dropdown {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+/*  */
+.nav-item.dropdown:hover .dropdown-toggle.nav-link {
+  color: #009688;
+}
+
+.dropdown-toggle.nav-link {
+  font-size: 20px;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  color: #4db6ac;
+}
+
+.dropdown-toggle.show.nav-link {
+  color: #009688;
+}
+
+.dropdown-menu.show {
+  border: none;
+  border-radius: 20px;
+  border: 1px solid #009688;
+  overflow: hidden;
+  background-color: #f2fffe !important;
+}
+
+.dropdown-item {
+  color: #009688;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.dropdown-item:hover {
+  background-color: #b2dfdb;
+  color:#009688;
+}
+.dropdown-item:active {
+  background-color: #009688;
+  color:#e0f2f1;
+}
+
+
+/* --------------------Navbar end-------------------- */
+/* --------------------logo start--------------------- */
+.navbar-logo-area {
+  display: flex
+}
+
+.navbar-logo-img-box {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #b2dfdb; */
+}
+
+.navbar-logo-img {
+  width: 100%;
+}
+
+.navbar-logo-text {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  margin-left: 10px;
+  color: #009688;
+  cursor: pointer;
+  font-size: 28px;
+  font-weight: 400;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    /* transform: rotate(90deg); */
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar-logo-area:hover .navbar-logo-img-box {
+  animation: rotateAnimation 3000ms infinite;
+}
+
+/* --------------------logo end-------------------- */
+/* --------------------loginBtn start--------------------- */
+.navbar-login-btn,
+.navbar-collapse-login-btn
+ {
+  /* display: flex;
+  justify-content: flex-end; */
+}
+
+.navbar-login {
+  padding: 0 20px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 30px;
+  border: 1px solid #009688;
+  transition: all 300ms;
+  color: #009688;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-login:hover {
+  background-color: #009688;
+  color: #ffffff;
+}
+
+.navbar-login:active {
+  background-color: #ffffff;
+  color: #009688;
+}
+
+/* --------------------loginBtn end--------------------- */
+/* --------------------media query start--------------------- */
+@media (max-width: 576px) {}
+
+/* md */
+@media (max-width: 768px) {}
+
+@media (min-width: 992px) {
+  .navbar-login-btn {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .navbar-collapse-login-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {}
+
+@media (min-width: 1400px) {}
+
+/* --------------------media query end--------------------- */
+/* --------------------hamburger btn start------------------- */
+.hamburger-btn {
+  width: 27px;
+  height: 20px;
+  position: relative;
+  /* border: 1px solid black; */
+}
+
+.bar {
+  width: 100%;
+  height: 2px;
+  background-color: #009688;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  transition: 0.3s;
+}
+
+/* 각 가로선의 위치 */
+.bar:nth-child(1) {
+  top: 0;
+}
+
+.bar:nth-child(2) {
+  top: 8px;
+}
+
+.bar:nth-child(3) {
+  top: 16px;
+}
+
+/* --------------------hamburger btn end------------------- */
