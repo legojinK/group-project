@@ -3,15 +3,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
+    background-color: #e0f2f1;
 }
-
 /* 로그인 폼 카드 스타일 */
 .login-card {
-    background-color: #e0f2f1;
+    background-color: #eef5f5;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #004d40;
 }
 
 /* 라벨 텍스트 스타일 */
@@ -21,7 +22,7 @@
 
 /* 입력 필드 스타일 */
 .form-control {
-    border: 2px solid #004d40; /* Teal 테두리 */
+    border: 2px solid #004d40;
     border-radius: 5px;
     box-shadow: none;
 }
@@ -45,7 +46,7 @@
 }
 
 .login-button:hover {
-    background-color: #004d40; /* 버튼 호버시 진한 Teal 색상 */
+    background-color: #004d40;
     border-color: #004d40;
 }
 

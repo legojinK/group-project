@@ -16,7 +16,7 @@ const authSlice = createSlice({
       state.user = user;
       state.success = true;
       localStorage.setItem('user', JSON.stringify(user)); // 유저 정보 로컬 스토리지에 저장
-      console.log("user:",JSON.stringify(user));
+      console.log('user:', JSON.stringify(user));
     },
     logout(state) {
       state.user = null;

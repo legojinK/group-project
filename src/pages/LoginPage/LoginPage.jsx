@@ -19,7 +19,7 @@ const LoginPage = () => {
 
     // 로그인 로직 (이메일/비밀번호가 맞는지 체크)
     if (email === 'test@gmail.com' && password === 'pw123123') {
-      dispatch(login({ email,password }));
+      dispatch(login({ email, password }));
       navigate('/');
     } else {
       dispatch(setLoginError('이메일 또는 비밀번호가 잘못되었습니다.')); // 에러 설정
