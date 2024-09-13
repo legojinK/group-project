@@ -1,0 +1,152 @@
+.animals-page-filter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 1rem;
+  padding: 2rem 2rem 1.5rem 2rem;
+  box-sizing: border-box;
+  background-color: rgb(246, 245, 245);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 5rem;
+  border: 3px solid #b2dfdb;
+}
+
+.animals-page-filter label {
+  color: rgba(0, 0, 0, 0.7);
+  margin-right: 1.5rem;
+  font-weight: 500;
+}
+
+.filter-date {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filter-date input {
+  border: 1px solid gray;
+  border-radius: 5px;
+  color: gray;
+  padding: .5rem;
+}
+
+.filter-date .form-group-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: .4rem;
+  row-gap: .5rem;
+}
+
+.filter-date-last {
+  color: gray;
+}
+
+.filter-location {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 3rem;
+  row-gap: 1rem;
+}
+
+.filter-location select {
+  border: 1px solid gray;
+  border-radius: 5px;
+  color: gray;
+  padding: .5rem;
+}
+
+.filter-location select {
+  width: 205px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filter-kind {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 3rem;
+  row-gap: 1rem;
+}
+
+.filter-kind select {
+  border: 1px solid gray;
+  border-radius: 5px;
+  color: gray;
+  padding: .5rem;
+  width: 205px;
+}
+
+.filter-kind .form-group-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: .4rem;
+  row-gap: .5rem;
+}
+
+.filter-divide-line {
+  border-bottom: 2px solid lightgray;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.search-button {
+  width: 200px;
+  padding: .8rem;
+  background-color: #4db6ac;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.search-button:hover {
+  background-color: #00796b; /* 호버 시 배경색 변경 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 효과 */
+}
+
+.filter-search-icon {
+  margin-right: .5rem;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 992px) {
+  .form-group-title {
+    width: 120px;
+  }
+
+  .form-group-content {
+    width: calc(100% - 80px);
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .animals-page-filter {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .filter-location select {
+    width: 180px;
+  }
+
+  .filter-kind select {
+    width: 180px;
+  }
+}
