@@ -5,8 +5,7 @@ import HomeAnimalSearch from "./component/HomeAnimalSearch/HomeAnimalSearch";
 
 const HomePage = () => {
   return (
-    <div>
-      HomePage
+    <div className="home-area">
       <Banner />
       <HomeAnimalSearch />
     </div>

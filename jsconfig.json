@@ -9,7 +9,10 @@
       "@api/*": ["./api/*"],
       "@store/*": ["./store/*"],
       "@components/*": ["./components/*"],
-      "@containers/*": ["./containers/*"]
+      "@containers/*": ["./containers/*"],
+      "@page/*": ["./page/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@features/*": ["./features/*"]
     }
   },
   "include": ["src/**/*"]

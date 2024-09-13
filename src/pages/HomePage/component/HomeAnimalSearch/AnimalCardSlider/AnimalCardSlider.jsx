@@ -9,42 +9,62 @@ import "react-multi-carousel/lib/styles.css";
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 1536 },
+    breakpoint: { max: 4000, min: 1400 },
     items: 2,
     slidesToSlide: 2,
   },
   desktop: {
-    breakpoint: { max: 1536, min: 1200 },
+    breakpoint: { max: 1400, min: 1200 },
     items: 2,
     slidesToSlide: 2,
   },
   largeTablet: {
-    breakpoint: { max: 1200, min: 900 },
+    breakpoint: { max: 1200, min: 992 },
     items: 1,
     slidesToSlide: 1,
   },
   tablet: {
-    breakpoint: { max: 900, min: 600 },
+    breakpoint: { max: 992, min: 768 },
     items: 1,
     slidesToSlide: 1,
   },
   mobile: {
-    breakpoint: { max: 600, min: 0 },
+    breakpoint: { max: 768, min: 576 },
+    items: 2,
+  },
+  smallMobile: {
+    breakpoint: { max: 576, min: 0 },
     items: 1,
   },
 };
 
 const AnimalCardSlider = () => {
+  const selectedDateFrom = 20240101;
+  const selectedDateTo = `${new Date().getFullYear()}${String(
+    new Date().getMonth() + 1
+  ).padStart(2, "0")}${String(new Date().getDate()).padStart(2, "0")}`;
+  const selectedSido = "";
+  const selectedSigungu = "";
+  const selectedShelter = "";
+  const selectedKind = "";
+  const selectedDetailKind = "";
 
   // useAnimalCardDataQuery를 사용하여 유기동물 데이터 조회
-  const { data: AnimalCardData, isLoading, isError, error } = useAnimalCardDataQuery();
+  const {
+    data: AnimalCardData,
+    isLoading: isMainLoading,
+    isError,
+    error,
+  } = useAnimalCardDataQuery({
+    selectedDateFrom,
+    selectedDateTo,
+    selectedSido,
+    selectedSigungu,
+    selectedShelter,
+    selectedKind,
+    selectedDetailKind,
+  });
   console.log("AnimalCardData", AnimalCardData);
-
-  // 로딩 중일 때
-  if (isLoading) {
-    // 추후 skeleton loader로 대체
-    return <div className="loading-box">로딩 중...</div>;
-  }
 
   // 에러 발생 시
   if (isError) {
@@ -61,9 +81,14 @@ const AnimalCardSlider = () => {
       autoPlaySpeed={7000}
       itemClass="custom-carousel-item"
     >
-      {AnimalCardData?.items.item.map((animal, index) => {
-        return <AnimalCard animal={animal} key={index} />;
-      })}
+      {isMainLoading
+        ? Array.from({ length: 12 }).map((_, index) => (
+            <div key={index} className="skeleton-card"></div>
+          ))
+        : AnimalCardData.items.item &&
+          AnimalCardData.items.item.map((animal, index) => {
+            return <AnimalCard animal={animal} key={index} />;
+          })}
     </Carousel>
   );
 };
