@@ -17,7 +17,8 @@ const menuItems = [
       {
         content: "나에게 맞는 반려동물 찾기",
         page: "AnimalTaste",
-        path: "/guide",
+        path: "https://www.waveon.io/apps/10410",
+        newTab: true,
       },
     ],
   },
@@ -38,7 +39,7 @@ const menuItems = [
 const AppLayout = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user } = useSelector(state => state.auth);
+  const { user } = useSelector((state) => state.auth);
 
   const handleLogoClick = () => {
     return navigate("/");
@@ -104,7 +105,14 @@ const AppLayout = () => {
                         return (
                           <NavDropdown.Item
                             key={innerIdx}
-                            onClick={() => navigate(`${content.path}`)}
+                            // onClick이 있으면 onClick 실행, 없으면 path로 이동
+                            onClick={() => {
+                              if (content.newTab) {
+                                window.open(content.path, "_blank");
+                              } else {
+                                navigate(`${content.path}`);
+                              }
+                            }}
                           >
                             {content.content}
                           </NavDropdown.Item>
