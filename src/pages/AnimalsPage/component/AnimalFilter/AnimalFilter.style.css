@@ -15,9 +15,7 @@
   font-weight: 500;
 }
 
-.form-group {
-
-}
+.form-group {}
 
 .search-button-box {
   margin-top: 20px;
@@ -76,6 +74,7 @@
   border-radius: 20px;
   padding: 8px;
   color: #5c706e;
+  cursor: pointer;
 }
 
 .form-group input:focus {
@@ -84,4 +83,9 @@
 
 .form-group select:focus {
   outline: none;
+}
+
+
+.col-md input[type="date"]::-webkit-calendar-picker-indicator{
+  cursor: pointer;
 }
