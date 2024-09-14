@@ -1,0 +1,112 @@
+.not-found-page {
+  height: 100vh;
+  background-color: #b0ded5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.not-found-img {
+  width: 600px;
+  height: 300px;
+  background-image: url('404page.png'); /* 배경 이미지 설정 */
+  background-size: cover; /* 배경 이미지 크기를 요소에 맞게 조정 */
+  background-position: center; /* 배경 이미지 위치를 중앙으로 설정 */
+  background-repeat: no-repeat; /* 배경 이미지 반복을 방지 */
+}
+
+.not-found-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.not-found-page h1 {
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-size: 4rem;
+  font-weight: 400;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.not-found-page p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(103, 103, 103);
+  margin-bottom: 2.5rem;
+}
+
+.not-found-page button {
+  padding: .8rem 1.4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  background-color: #e19003;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+}
+
+@media screen and (max-width: 1100px) {
+  .not-found-page {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .not-found-img {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .not-found-img {
+    width: 400px;
+    height: 200px;
+  }
+
+  .not-found-page h1 {
+    font-size: 3rem;
+  }
+
+  .not-found-page p {
+    font-size: 1.2rem;
+  }
+
+  .not-found-page button {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .not-found-page h1 {
+    font-size: 2.5rem;
+  }
+
+  .not-found-page p {
+    font-size: 1rem;
+  }
+
+  .not-found-page button {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .not-found-img {
+    width: 300px;
+    height: 150px;
+  }
+
+  .not-found-page h1 {
+    font-size: 2rem;
+  }
+
+  .not-found-page p {
+    font-size: .9rem;
+  }
+
+  .not-found-page button {
+    font-size: .9rem;
+  }
+}
