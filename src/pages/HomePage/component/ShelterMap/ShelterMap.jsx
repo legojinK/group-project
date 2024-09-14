@@ -12,8 +12,8 @@ const ShelterMap = () => {
   const shelters = list.map((shelter) => ({
     careNm: shelter.careNm,
     careAddr: shelter.careAddr,
-    lat: shelter.latitude,  
-    lng: shelter.longitude,  
+    lat: shelter.lat,  
+    lng: shelter.lng,  
   }));
 
   if (isLoading) return <p>Loading...</p>;
@@ -22,10 +22,8 @@ const ShelterMap = () => {
   if (list.length === 0) return <p>No shelters found.</p>;
 
   return (
-    <div className="homepage">
+    <div className="shelter-map">
       <h1>동물보호소</h1>
-
-      <MapList shelters={shelters} />
 
       <div className="scrollable-box">
         <ul className="shelter-list">
@@ -41,6 +39,7 @@ const ShelterMap = () => {
       <Link to="/shelters">
         <button className="more-button">보호소 더보기...</button>
       </Link>
+      <MapList shelters={shelters} />
     </div>
   );
 };

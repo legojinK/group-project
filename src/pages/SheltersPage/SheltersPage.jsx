@@ -22,12 +22,14 @@ const ShelterList = () => {
     }
   };
 
+  console.log("asdf",data)
+
   if (isLoading) {
-    return <div>Loading extra information...</div>;
+    return <div>로딩중...</div>;
   }
 
   if (isError) {
-    return <div>Error loading extra information.</div>;
+    return <div>에러</div>;
   }
 
   const pageNumbers = [];

@@ -8,7 +8,7 @@ const ShelterCard = ({ extraInfo }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/shelter/${extraInfo.careNm}`);
+    navigate(`/shelter/${extraInfo?.careNm}`);
   };
 
   return (
