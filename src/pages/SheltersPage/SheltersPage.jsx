@@ -9,7 +9,6 @@ const ShelterList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const { data, isLoading, isError } = useShelterQuery(currentPage);
 
-
   const items = data?.items?.item || [];
   const totalItems = data?.totalCount || 0;
   const itemsPerPage = 20;
@@ -23,8 +22,6 @@ const ShelterList = () => {
     }
   };
 
-  console.log("dafs",data)
-
   if (isLoading) {
     return <div>Loading extra information...</div>;
   }
@@ -32,7 +29,6 @@ const ShelterList = () => {
   if (isError) {
     return <div>Error loading extra information.</div>;
   }
-
 
   const pageNumbers = [];
   const maxPagesToShow = 5;
@@ -59,10 +55,10 @@ const ShelterList = () => {
         </div>
         <h2 className="shelter-des">전국의 동물보호소 정보를 확인해 보세요</h2>
       </div>
-      <div className="shelter-box">
+      <div className="shelter-grid">
         <div className="shelter-cards">
-          {items.map((info, index) => (
-            <ShelterCard key={index} extraInfo={info} />
+          {items.map((info) => (
+            <ShelterCard key={info.id} extraInfo={info} /> 
           ))}
         </div>
       </div>
@@ -71,16 +67,11 @@ const ShelterList = () => {
         <button
           className="next-button"
           onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        >
-          ◀
-        </button>
+          disabled={currentPage === 1}>◀</button>
         {pageNumbers.map((number) => (
           <button
             key={number}
-            className={`pagination-button ${
-              currentPage === number ? "active" : ""
-            }`}
+            className={`pagination-button ${currentPage === number ? "active" : ""}`}
             onClick={() => handlePageChange(number)}
           >
             {number}
