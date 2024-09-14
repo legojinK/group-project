@@ -3,6 +3,12 @@ import "./AdoptGuidePage.style.css";
 import { Col, Container, Row } from "react-bootstrap";
 import ContentCard from "./components/ContentCard/ContentCard";
 
+const welcomeMessege = {
+  title: "동물을 입양해보세요!",
+  content:
+    "개나 고양이를 키우고 싶다면 유기동물 보호시설에서 보호하고 있는 유기동물을 입양하는 게 어떨까요? 원하는 동물을 새 식구로 맞이하는 것은 물론 한 생명을 구했다는 자부심으로 가슴이 뿌듯해질 것입니다.",
+};
+
 const guideContents = [
   {
     id: 1,
@@ -37,12 +43,18 @@ const guideContents = [
 const AdoptGuidePage = () => {
   return (
     <div className="guide-area">
+      <h6 className="page-nav">
+        입양정보 &nbsp; &gt; &nbsp; <strong>반려동물 입양안내</strong>
+      </h6>
       <div className="guide-img-box">
-        <img src="https://www.animal.go.kr/front/images/contents/headline_img1.png" />
+        <img
+          className="img"
+          src="https://www.animal.go.kr/front/images/contents/headline_img1.png"
+        />
       </div>
       <div className="guide-content-box">
         <Container>
-          <h1 className="page-title">입양자 준수사항</h1>
+          <h1 className="content-title">입양자 준수사항</h1>
           <Row>
             {guideContents.map((item, idx) => {
               return (
