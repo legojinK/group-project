@@ -5,8 +5,11 @@ import URLCard from "../../common/URLCard/URLCard";
 const AnimalEduPage = () => {
   return (
     <div className="animal-edu-page">
+    <h6 className="page-nav">
+      입양정보 &nbsp; &gt; &nbsp; <strong>반려동물 입양교육</strong>
+    </h6>
       <div className="animal-edu-page-title">
-        <span>동물사랑배움터</span>
+        <span>반려동물 입양교육</span>
       </div>
       <div className="animal-edu-page-content">
         <URLCard

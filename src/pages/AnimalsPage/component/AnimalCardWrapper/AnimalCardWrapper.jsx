@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import AnimalCard from "@/common/AnimalCard/AnimalCard";
 import { useAnimalCardDataQuery } from "@/hooks/useAnimalCardData";
 import { useDispatch } from "react-redux";
-import { setTotalCount } from "@/store/redux/animalSearchSlice";
+import { setTotalCount, resetFilters } from "@/store/redux/animalSearchSlice";
 
 const AnimalCardWrapper = () => {
   const dispatch = useDispatch();
@@ -53,6 +53,12 @@ const AnimalCardWrapper = () => {
   });
   console.log("animalCardData", animalCardData);
 
+  // 컴포넌트가 마운트될 때 필터링 상태 초기화
+  useEffect(() => {
+    dispatch(resetFilters());
+    refetchAnimalCardData();
+  }, [dispatch, refetchAnimalCardData]);
+
   // animalCardData가 바뀔 때마다 totalCount를 redux에 저장
   useEffect(() => {
     if (animalCardData) {
@@ -90,7 +96,9 @@ const AnimalCardWrapper = () => {
       <div className="animal-card-count">
         총{" "}
         <span className="count-number">
-          {animalCardData?.totalCount === 0 ? 0 : animalCardData?.totalCount?.toLocaleString()}
+          {animalCardData?.totalCount === 0
+            ? 0
+            : animalCardData?.totalCount?.toLocaleString()}
         </span>
         건
       </div>
