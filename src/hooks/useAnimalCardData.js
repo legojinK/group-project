@@ -26,3 +26,5 @@ export const useAnimalCardDataQuery = ({
     select: (result) => result.response.body,
   });
 };
+
+

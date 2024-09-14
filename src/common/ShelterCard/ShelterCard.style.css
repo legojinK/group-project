@@ -1,0 +1,65 @@
+.shelter-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px 4px #a8c4c2;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.shelter-card:hover {
+  box-shadow: 7px 7px 7px 4px #8cb2b0;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.care-number {
+  color: rgb(1, 129, 129);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.care-tel {
+  color: rgb(149, 196, 176);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.shelter-card h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.shelter-card p {
+  font-size: 1rem;
+  margin: 4px 0;
+  color: #666;
+}
+
+.care-add {
+  color: rgb(47, 165, 176);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.care-add p {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+}
+
+.care-number h1,
+.care-add p,
+.care-tel p {
+  margin: 0;
+  margin-left: 8px;
+}

@@ -1,0 +1,58 @@
+.shelter-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+.shelter-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .shelter-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .shelter-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .shelter-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination button:hover {
+  background-color: #f0f0f0;
+}
