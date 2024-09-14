@@ -4,7 +4,7 @@ import "./Footer.style.css";
 const Footer = () => {
   return (
     <div className="footer">
-      <div>
+      <div className="footer-img">
         <img
           src="https://www.animal.go.kr/front/images/common/familysite/sitelogo1.png"
           alt="logo1"

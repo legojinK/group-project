@@ -8,6 +8,20 @@
   flex-direction: column;
 }
 
+.footer-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.footer-logo1 {
+  width: 180px;
+  height: 45px;
+  margin: 5px;
+}
+
 .web-img {
   width: 60px;
   height: 45px;
