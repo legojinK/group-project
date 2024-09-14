@@ -1,14 +1,14 @@
 import React from "react";
 import "./ShelterDetailPage.style.css"
 import { useParams } from "react-router-dom";
-import { useShelterDetails } from "@/hooks/useShelterDetails";
 import { faBone, faBowlFood, faBuilding, faCalendar, faCalendarDays, faClock, faLocationDot, faPaw, faPhone, faShopLock, faSitemap, faStethoscope, faUserDoctor, faUserNurse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MapTest from "@/map/Map/Map";
+import { useShelterDetails } from "@/hooks/useShelterDetails";
 
 const ShelterDetailPage = () => {
   const { careNm } = useParams();
-  const { data, isLoading, isError, error } = useShelterDetails(careNm);
+  const { data, isLoading, isError, error } = useShelterDetails({careNm});
 
   console.log("dddd",data)
 
@@ -22,15 +22,19 @@ const ShelterDetailPage = () => {
   }
 
   if (!data || !data.items || !data.items.item || !data.items.item.length) {
-    return <div>Shelter not found.</div>;
+    return <div>보호소를 찾지 못했습니다.</div>;
   }
 
-  const shelter = data.items.item[0]; 
+  const shelter = data.items.item.find(item => item.careNm === careNm);
+
+  if (!shelter) {
+    return <div>보호소에 관한 데이터를 찾지 못했습니다</div>;
+  }
 
   return (
     <div className="shelter-detail">
         <div className="paw-name">
-        <FontAwesomeIcon icon={faPaw} />
+        <FontAwesomeIcon icon={faPaw} className="font-paw"/>
         <h1>{shelter.careNm}</h1>
         </div>
       <div className="shelter-basic-info">

@@ -22,7 +22,8 @@ const ShelterList = () => {
     }
   };
 
-  console.log("asdf",data)
+  console.log("Current Page:", currentPage);
+  console.log("Fetched Data:", data);
 
   if (isLoading) {
     return <div>로딩중...</div>;
@@ -59,9 +60,14 @@ const ShelterList = () => {
       </div>
       <div className="shelter-grid">
         <div className="shelter-cards">
-          {items.map((info) => (
-            <ShelterCard key={info.id} extraInfo={info} /> 
-          ))}
+          {items.map((info) => {
+            if (!info || !info.careNm) {
+              console.error("Invalid item:", info);
+              return null; 
+            }
+            console.log("Rendering card for:", info.careNm);
+            return <ShelterCard key={info.careNm} extraInfo={info} />;
+          })}
         </div>
       </div>
 
@@ -69,7 +75,10 @@ const ShelterList = () => {
         <button
           className="next-button"
           onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}>◀</button>
+          disabled={currentPage === 1}
+        >
+          ◀
+        </button>
         {pageNumbers.map((number) => (
           <button
             key={number}

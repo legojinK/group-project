@@ -128,10 +128,10 @@ margin-top: 20px;
 
 @media (max-width: 600px) {
   .shelter-title {
-    font-size: 1.5rem; /* Adjust size for small screens */
+    font-size: 1.5rem; 
   }
 
   .shelter-des {
-    font-size: 1rem; /* Adjust size for small screens */
+    font-size: 1rem;
   }
 }

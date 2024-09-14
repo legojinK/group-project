@@ -8,13 +8,13 @@ const ShelterCard = ({ extraInfo }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/shelter/${extraInfo?.careNm}`);
+    navigate(`/shelters/${extraInfo.careNm}`);
   };
 
   return (
     <div className="shelter-card" onClick={handleClick}>
       <div className="care-number">
-        <FontAwesomeIcon icon={faPaw} />
+        <FontAwesomeIcon icon={faPaw}/>
         <h1>{extraInfo.careNm}</h1>
       </div>
       <div className="care-add">

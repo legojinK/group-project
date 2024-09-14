@@ -1,4 +1,3 @@
-// hooks/useShelter.js
 import shelterApi from "@/utils/shelterApi";
 import { useQuery } from "@tanstack/react-query";
 

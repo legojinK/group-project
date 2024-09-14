@@ -28,7 +28,7 @@ function App() {
           <Route path="guide" element={<AdoptGuidePage />} />
           <Route path="edu" element={<AnimalEduPage />} />
           <Route path="shelters" element={<SheltersPage />} />
-          <Route path="/shelter/:careNm" element={<ShelterDetailPage />} />
+          <Route path="shelters/:careNm" element={<ShelterDetailPage />} />
 
           <Route path="animals">
             {/* 동물 리스트 페이지 */}

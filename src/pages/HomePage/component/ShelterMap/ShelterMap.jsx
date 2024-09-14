@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./ShelterMap.style.css";
 import MapList from "@/map/ListMap/ListMap";
 import { useShelterList } from "@/hooks/useShelterList";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const ShelterMap = () => {
   const { data, isLoading, isError, error } = useShelterList();
@@ -12,8 +13,8 @@ const ShelterMap = () => {
   const shelters = list.map((shelter) => ({
     careNm: shelter.careNm,
     careAddr: shelter.careAddr,
-    lat: shelter.lat,  
-    lng: shelter.lng,  
+    lat: shelter.lat,
+    lng: shelter.lng,
   }));
 
   if (isLoading) return <p>Loading...</p>;
@@ -22,24 +23,35 @@ const ShelterMap = () => {
   if (list.length === 0) return <p>No shelters found.</p>;
 
   return (
-    <div className="shelter-map">
-      <h1>동물보호소</h1>
-
-      <div className="scrollable-box">
-        <ul className="shelter-list">
-          {list.map((shelter, index) => (
-            <li key={index} className="shelter-item">
-              <h2>{shelter.careNm}</h2>
-              <p>{shelter.careAddr}</p>
-            </li>
-          ))}
-        </ul>
+    <div>
+    <div className="home-animal-search">
+      <div className="home-animal-search-description">
+        <div className="home-animal-search-title">동물보호소</div>
+        <div className="home-animal-search-content">
+          전국의 동물보호소 정보를 확인해 보세요.
+        </div>
       </div>
-
-      <Link to="/shelters">
-        <button className="more-button">보호소 더보기...</button>
-      </Link>
+      </div>
+      <div className="shelter-map">
       <MapList shelters={shelters} />
+      <div className="">
+        <div className="scrollable-box">
+          <ul className="shelter-list">
+            {list.map((shelter, index) => (
+              <li key={index} className="shelter-item">
+                <div className="name-address">
+                <h2>{shelter.careNm}</h2>
+                <p>{shelter.careAddr}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <Link to="/shelters">
+          <button className="more-button">보호소 더보기  ➜</button>
+        </Link>
+      </div>
+      </div>
     </div>
   );
 };
