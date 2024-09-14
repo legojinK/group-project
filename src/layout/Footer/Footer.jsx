@@ -2,6 +2,9 @@ import React from "react";
 import "./Footer.style.css";
 
 const Footer = () => {
+  const imgLink = (url) => {
+    window.open(url, "_blank");
+  };
   return (
     <div className="footer">
       <div className="footer-img">
@@ -9,21 +12,25 @@ const Footer = () => {
           src="https://www.animal.go.kr/front/images/common/familysite/sitelogo1.png"
           alt="logo1"
           className="footer-logo1"
+          onClick={() => imgLink("https://www.qia.go.kr/listindexWebAction.do")}
         />
         <img
           src="https://www.animal.go.kr/front/images/common/familysite/sitelogo2.png"
           alt="logo1"
           className="footer-logo1"
+          onClick={() => imgLink("https://www.mafra.go.kr/sites/home/index.do")}
         />
         <img
           src="https://www.animal.go.kr/front/images/common/familysite/sitelogo3.png"
           alt="logo1"
           className="footer-logo1"
+          onClick={() => imgLink("https://www.data.go.kr/")}
         />
         <img
           src="https://www.animal.go.kr/front/images/common/familysite/sitelogo4.png"
           alt="logo1"
           className="footer-logo1"
+          onClick={() => imgLink("https://apms.epis.or.kr/home/kor/main.do")}
         />
       </div>
       <div className="text-logo">
