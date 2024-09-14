@@ -8,12 +8,12 @@
 
 body {
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  margin-left: 20px; /* Optional - adds space from the left side of the body */
+  margin-left: 20px; 
 }
 
 .homepage {
   padding: 20px;
-  text-align: left; /* Ensures the content is aligned left */
+  text-align: left;
 }
 
 .scrollable-box {
@@ -24,7 +24,7 @@ body {
   padding: 10px;
   border-radius: 8px;
   background-color: #f9f9f9;
-  margin-left: 0; /* Align the scrollable box to the left */
+  margin-left: 0; 
 }
 
 .scrollable-box::-webkit-scrollbar {

@@ -1,36 +1,36 @@
 .shelter-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
-  gap: 16px; /* Space between cards */
-  padding: 16px; /* Space around the grid */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px; 
+  padding: 16px; 
 }
 
 .shelter-card {
-  border: 1px solid #ddd; /* Border around each card */
-  border-radius: 8px; /* Rounded corners */
-  padding: 16px; /* Space inside the card */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: #fff; /* Card background color */
+  border: 1px solid #ddd; 
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  background-color: #fff; 
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content horizontally */
+  align-items: center; 
 }
 
 @media (max-width: 1200px) {
   .shelter-list {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 
 @media (max-width: 900px) {
   .shelter-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (max-width: 600px) {
   .shelter-list {
-    grid-template-columns: 1fr; /* 1 column on extra small screens */
+    grid-template-columns: 1fr;
   }
 }
 

@@ -9,12 +9,11 @@ const Homepage = () => {
 
   const list = data?.items?.item || [];
 
-  // Convert shelter list data to include lat and lng
   const shelters = list.map((shelter) => ({
     careNm: shelter.careNm,
     careAddr: shelter.careAddr,
-    lat: shelter.latitude,   // Adjust if field names are different
-    lng: shelter.longitude,  // Adjust if field names are different
+    lat: shelter.latitude,  
+    lng: shelter.longitude,  
   }));
 
   if (isLoading) return <p>Loading...</p>;
@@ -26,7 +25,6 @@ const Homepage = () => {
     <div className="homepage">
       <h1>동물보호소</h1>
 
-      {/* Display the map with all markers */}
       <MapList shelters={shelters} />
 
       <div className="scrollable-box">
