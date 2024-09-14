@@ -7,6 +7,7 @@ import {updateFavorite} from "@store/redux/favoritesSlice";
 
 const AnimalCard = ({ animal }) => {
   const navigate = useNavigate();
+  //const { desertionNo, filename, happenDt, happenPlace } = animal;
     const dispatch = useDispatch();
   const isLoggedIn = useSelector((state)=>state.auth.user)
     const favorites= useSelector((state)=>state.favorites.favorites)
@@ -26,7 +27,7 @@ const AnimalCard = ({ animal }) => {
 
   // 동물 상세 페이지로 이동
   const goToAnimalDetailPage = () => {
-    navigate(`/animals/${animal?.desertionNo}`);
+    navigate(`/animals/${animal?.desertionNo}`, { state: { animal } });
   };
 
     const isFavorite = favorites.some((fav) => fav.desertionNo === animal.desertionNo);
