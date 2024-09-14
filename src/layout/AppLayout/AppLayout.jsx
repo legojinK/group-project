@@ -13,7 +13,7 @@ const menuItems = [
     title: "입양정보",
     contents: [
       { content: "반려동물 입양안내", page: "AdoptGuidePage", path: "/guide" },
-      { content: "반려동물 입양교육", page: "AnimalLove", path: "/guide" },
+      { content: "반려동물 입양교육", page: "AnimalEduPage", path: "/edu" },
       {
         content: "나에게 맞는 반려동물 찾기",
         page: "AnimalTaste",
