@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./AppLayout.style.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "@store/redux/AuthSlice";
 
 const menuItems = [
   {
@@ -23,11 +25,6 @@ const menuItems = [
     title: "구조동물",
     contents: [
       { content: "보호 중인 동물", page: "AnimalsPage", path: "/animals" },
-      {
-        content: "즐겨찾기한 동물",
-        page: "AnimalLikePage",
-        path: "/animals/like",
-      },
     ],
   },
   {
@@ -40,9 +37,16 @@ const menuItems = [
 
 const AppLayout = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user } = useSelector(state => state.auth);
 
   const handleLogoClick = () => {
     return navigate("/");
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
   };
 
   return (
@@ -66,12 +70,18 @@ const AppLayout = () => {
             </Navbar.Brand>
             <div style={{ display: "flex" }}>
               <div className="navbar-login-btn">
-                <button
-                  className="navbar-login"
-                  onClick={() => navigate("/login")}
-                >
-                  로그인
-                </button>
+                {user ? (
+                  <button className="navbar-login" onClick={handleLogout}>
+                    로그아웃
+                  </button>
+                ) : (
+                  <button
+                    className="navbar-login"
+                    onClick={() => navigate("/login")}
+                  >
+                    로그인
+                  </button>
+                )}
               </div>
               <Navbar.Toggle aria-controls="navbarScroll">
                 <div className="hamburger-btn">
@@ -100,17 +110,30 @@ const AppLayout = () => {
                           </NavDropdown.Item>
                         );
                       })}
+                      {item.title === "구조동물" && user && (
+                        <NavDropdown.Item
+                          onClick={() => navigate("/animals/like")}
+                        >
+                          즐겨찾기한 동물
+                        </NavDropdown.Item>
+                      )}
                     </NavDropdown>
                   );
                 })}
               </Nav>
               <div className="navbar-collapse-login-btn">
-                <button
-                  className="navbar-login"
-                  onClick={() => navigate("/login")}
-                >
-                  로그인
-                </button>
+                {user ? (
+                  <button className="navbar-login" onClick={handleLogout}>
+                    로그아웃
+                  </button>
+                ) : (
+                  <button
+                    className="navbar-login"
+                    onClick={() => navigate("/login")}
+                  >
+                    로그인
+                  </button>
+                )}
               </div>
             </Navbar.Collapse>
           </Container>
