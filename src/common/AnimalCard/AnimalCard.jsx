@@ -1,9 +1,15 @@
 import React from "react";
 import "./AnimalCard.style.css";
 import { useNavigate } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {FaHeart, FaRegHeart} from "react-icons/fa";
+import {updateFavorite} from "@store/redux/favoritesSlice";
 
 const AnimalCard = ({ animal }) => {
   const navigate = useNavigate();
+    const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state)=>state.auth.user)
+    const favorites= useSelector((state)=>state.favorites.favorites)
 
   // 20240101을 2024-01-01로 변환하는 함수
   const formatDate = (dateString) => {
@@ -23,6 +29,23 @@ const AnimalCard = ({ animal }) => {
     navigate(`/animals/${animal?.desertionNo}`);
   };
 
+    const isFavorite = favorites.some((fav) => fav.desertionNo === animal.desertionNo);
+
+
+    // 로그인 여부에 따른 즐겨찾기 버튼 클릭 시 이동
+    const handleFavoriteClick=(e)=>{
+      e.stopPropagation();
+      if(isLoggedIn){
+          dispatch(updateFavorite(animal))
+      }
+      else{
+          alert("로그인이 필요합니다.");
+          navigate('/login');
+      }
+  }
+
+
+
   return (
     <div className="animal-card" onClick={goToAnimalDetailPage}>
       <div className="animal-card-regisDate">
@@ -36,7 +59,11 @@ const AnimalCard = ({ animal }) => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-      />
+      >
+          <div className="favorite-icon" onClick={handleFavoriteClick}>
+              {isFavorite ? <FaHeart color="red" /> : <FaRegHeart />}
+          </div>
+      </div>
       <div className="animal-card__content">
         <div className="card__type-age">
           <span className="card__type">
