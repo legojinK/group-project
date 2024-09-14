@@ -12,6 +12,7 @@ import AnimalLikePage from "./pages/AnimalLikePage/AnimalLikePage";
 import NotFound from "./pages/NotFound/NotFound";
 import store from "./store/redux/store";
 import { Provider } from "react-redux";
+import AnimalEduPage from "./pages/AnimalEduPage/AnimalEduPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           {/* 로그인 페이지 */}
           <Route path="login" element={<LoginPage />} />
           <Route path="guide" element={<AdoptGuidePage />} />
+          <Route path="edu" element={<AnimalEduPage />} />
           <Route path="shelters" element={<SheltersPage />} />
 
           <Route path="animals">

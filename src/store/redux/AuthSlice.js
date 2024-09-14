@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { clearFavorites, loadFavorites } from "./favoritesSlice";
 
 // 초기 상태 설정
 const initialState = {
@@ -16,15 +17,14 @@ const authSlice = createSlice({
       state.user = user;
       state.success = true;
       localStorage.setItem("user", JSON.stringify(user)); // 유저 정보 로컬 스토리지에 저장
-      console.log("user:", JSON.stringify(user));
     },
     logout(state) {
       state.user = null;
       state.success = false;
-      localStorage.removeItem("user"); // 유저 정보 제거
+      localStorage.removeItem("user");
     },
     setLoginError(state, action) {
-      state.loginError = action.payload; // 에러 메시지 설정
+      state.loginError = action.payload;
     },
     clearErrors(state) {
       state.loginError = null;
@@ -33,4 +33,17 @@ const authSlice = createSlice({
 });
 
 export const { login, logout, setLoginError, clearErrors } = authSlice.actions;
+
+// 로그아웃 시 즐겨찾기 목록 초기화
+export const logoutAndClearFavorites = () => (dispatch) => {
+  dispatch(logout());
+  dispatch(clearFavorites());
+};
+
+// 로그인 시 즐겨찾기 목록 불러오기
+export const loginAndLoadFavorites = (user) => (dispatch) => {
+  dispatch(login(user));
+  dispatch(loadFavorites());
+};
+
 export default authSlice.reducer;

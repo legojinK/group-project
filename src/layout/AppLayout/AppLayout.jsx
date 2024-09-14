@@ -6,18 +6,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./AppLayout.style.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "@store/redux/AuthSlice";
+import { logoutAndClearFavorites } from "@store/redux/AuthSlice";
 
 const menuItems = [
   {
     title: "입양정보",
     contents: [
       { content: "반려동물 입양안내", page: "AdoptGuidePage", path: "/guide" },
-      { content: "반려동물 입양교육", page: "AnimalLove", path: "/guide" },
+      { content: "반려동물 입양교육", page: "AnimalEduPage", path: "/edu" },
       {
         content: "나에게 맞는 반려동물 찾기",
         page: "AnimalTaste",
-        path: "/guide",
+        path: "https://www.waveon.io/apps/10410",
+        newTab: true,
       },
     ],
   },
@@ -38,14 +39,14 @@ const menuItems = [
 const AppLayout = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user } = useSelector(state => state.auth);
+  const { user } = useSelector((state) => state.auth);
 
   const handleLogoClick = () => {
     return navigate("/");
   };
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(logoutAndClearFavorites());
     navigate("/");
   };
 
@@ -104,7 +105,14 @@ const AppLayout = () => {
                         return (
                           <NavDropdown.Item
                             key={innerIdx}
-                            onClick={() => navigate(`${content.path}`)}
+                            // onClick이 있으면 onClick 실행, 없으면 path로 이동
+                            onClick={() => {
+                              if (content.newTab) {
+                                window.open(content.path, "_blank");
+                              } else {
+                                navigate(`${content.path}`);
+                              }
+                            }}
                           >
                             {content.content}
                           </NavDropdown.Item>
