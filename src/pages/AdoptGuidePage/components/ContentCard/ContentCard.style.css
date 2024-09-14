@@ -1,0 +1,45 @@
+.card {
+  border: none;
+  margin-bottom: 10px;
+  background-color: #e0f2f1;
+  border: 1px solid #009688;
+  border-radius: 20px;
+}
+
+.card-body {
+  min-height: 148px;
+}
+
+.card-title.h5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #009688;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-size: 30px;
+}
+
+.card-text {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: #26a69a;
+  display: flex;
+  align-items: center;
+}
+
+.card:hover {
+  background-color: #f2fffe;
+}
+
+
+
+@media (max-width: 768px) {
+  .card-body {
+    display: flex;
+    min-height: 0;
+  }
+  .card-title.h5 {
+    font-size: 40px;
+    margin: 0 20px 0 0;
+  }
+}
