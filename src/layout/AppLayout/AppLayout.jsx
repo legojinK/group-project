@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./AppLayout.style.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {logoutAndClearFavorites} from "@store/redux/AuthSlice";
+import { logoutAndClearFavorites } from "@store/redux/AuthSlice";
 
 const menuItems = [
   {

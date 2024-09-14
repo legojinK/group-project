@@ -28,53 +28,53 @@ const LoginPage = () => {
   };
 
   return (
-      <div className="login-container">
-        <Container>
-          <Row className="justify-content-md-center">
-            <Col xs={12} md={4}>
-              <Card className="login-card">
-                <Card.Body>
-                  <Form onSubmit={handleLogin}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label className="login-label">Email</Form.Label>
-                      <Form.Control
-                          type="email"
-                          placeholder="Enter email"
-                          required
-                          value={email}
-                          onChange={event => setEmail(event.target.value)}
-                      />
-                    </Form.Group>
+    <div className="login-container">
+      <Container>
+        <Row className="justify-content-md-center">
+          <Col xs={12} md={4}>
+            <Card className="login-card">
+              <Card.Body>
+                <Form onSubmit={handleLogin}>
+                  <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label className="login-label">Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter email"
+                      required
+                      value={email}
+                      onChange={event => setEmail(event.target.value)}
+                    />
+                  </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label className="login-label">Password</Form.Label>
-                      <Form.Control
-                          type="password"
-                          placeholder="Password"
-                          required
-                          value={password}
-                          onChange={event => setPassword(event.target.value)}
-                      />
-                    </Form.Group>
+                  <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label className="login-label">Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder="Password"
+                      required
+                      value={password}
+                      onChange={event => setPassword(event.target.value)}
+                    />
+                  </Form.Group>
 
-                    {loginError && <p style={{ color: "red" }}>{loginError}</p>}
+                  {loginError && <p style={{ color: "red" }}>{loginError}</p>}
 
-                    <div className="button-container">
-                      <Button
-                          variant="primary"
-                          type="submit"
-                          className="login-button"
-                      >
-                        로그인
-                      </Button>
-                    </div>
-                  </Form>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+                  <div className="button-container">
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      className="login-button"
+                    >
+                      로그인
+                    </Button>
+                  </div>
+                </Form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 
