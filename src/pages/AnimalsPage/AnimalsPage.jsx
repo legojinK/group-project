@@ -9,6 +9,9 @@ import Pagination from "./component/pagination/Pagination";
 const AnimalsPage = () => {
   return (
     <div className="animals-page">
+      <h6 className="page-nav">
+        구조동물 &nbsp; &gt; &nbsp; <strong>보호 중인 동물</strong>
+      </h6>
       <div className="animals-page-title">
         <span>보호 중인 동물</span>
       </div>
