@@ -1,0 +1,73 @@
+.shelter-card {
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 16px;
+  margin: 10px;
+  box-shadow: 6px 6px 5px 4px #a8c4c2;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.shelter-card:hover {
+  box-shadow: 7px 7px 7px 4px #8cb2b0;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.care-number {
+margin-top: 5px;
+  color: rgb(1, 129, 129);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.care-tel {
+  font-family: "Ownglyph_meetme-Rg", sans-serif;
+  color: rgb(149, 196, 176);
+  display: flex;
+  align-items: center;
+}
+
+.shelter-card h1 {
+  font-family: "Ownglyph_meetme-Rg", sans-serif;
+  font-size: 30px;
+  margin: 0;
+}
+
+.shelter-card p {
+  font-size: 1rem;
+  margin: 4px 0;
+  color: #666;
+}
+
+.care-add {
+  color: rgb(47, 165, 176);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.care-add p {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  margin: 0;
+  margin-left: 8px;
+}
+
+.care-number h1{
+    margin: 0;
+    margin-left: 8px;
+}
+
+.care-tel p {
+  margin: 0;
+  margin-left: 8px;
+  font-size: 20px; 
+}
