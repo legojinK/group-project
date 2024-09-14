@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const AnimalCard = ({ animal }) => {
   const navigate = useNavigate();
+  //const { desertionNo, filename, happenDt, happenPlace } = animal;
 
   // 20240101을 2024-01-01로 변환하는 함수
   const formatDate = (dateString) => {
@@ -20,7 +21,7 @@ const AnimalCard = ({ animal }) => {
 
   // 동물 상세 페이지로 이동
   const goToAnimalDetailPage = () => {
-    navigate(`/animals/${animal?.desertionNo}`);
+    navigate(`/animals/${animal?.desertionNo}`, { state: { animal } });
   };
 
   return (
