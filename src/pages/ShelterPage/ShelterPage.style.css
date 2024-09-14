@@ -1,0 +1,59 @@
+.shelter-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+  gap: 16px; /* Space between cards */
+  padding: 16px; /* Space around the grid */
+}
+
+.shelter-card {
+  border: 1px solid #ddd; /* Border around each card */
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px; /* Space inside the card */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fff; /* Card background color */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+@media (max-width: 1200px) {
+  .shelter-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .shelter-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .shelter-list {
+    grid-template-columns: 1fr; /* 1 column on extra small screens */
+  }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .pagination button:hover {
+    background-color: #f0f0f0;
+  }
+  
