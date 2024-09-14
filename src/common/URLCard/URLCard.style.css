@@ -1,0 +1,96 @@
+.animal-edu-url {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap:.5rem;
+  background-color: #009688;
+  padding: 2rem 2rem;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
+  position: relative;
+  overflow: hidden;
+}
+
+.animal-edu-url::before {
+  content: '';
+  width: 225px;
+  height: 170px;
+  display: block;
+  position: absolute;
+  right: 0px;
+  bottom: -67px;
+  background: url('https://www.animal.go.kr/front/images/main/pet_illust3.png') no-repeat 0 0;
+  background-size: 225px auto;
+  opacity: .8;
+}
+
+.edu-url-title {
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: .1rem;
+  font-weight: 500;
+  color: rgb(236, 236, 236);
+}
+
+.edu-url-content {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: .1rem;
+  font-weight: 600;
+  color: rgb(236, 236, 236);
+  margin-bottom: 1.5rem;
+}
+
+.animal-edu-url button {
+  background-color: #00796b;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: .7rem 2rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+  transition: background-color .15s;
+}
+
+.animal-edu-url button:hover {
+  background-color: #004d40;
+}
+
+.button-arrow {
+  width: 14px;
+  height: 14px;
+  margin-left: 8px;
+  background: url('https://www.animal.go.kr/front/images/common/base_sprite.png') no-repeat 0 0;
+  background-size: 280px auto;
+  background-position: 0 -44px;
+}
+
+@media screen and (max-width: 576px) {
+  .animal-edu-url {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .animal-edu-url::before {
+    width: 180px;
+    height: 140px;
+    bottom: -55px;
+  }
+
+  .edu-url-title {
+    font-size: 2rem;
+  }
+
+  .edu-url-content {
+    font-size: 1rem;
+  }
+
+  .animal-edu-url button {
+    font-size: 1rem;
+    padding: .5rem 1.5rem;
+  }
+}

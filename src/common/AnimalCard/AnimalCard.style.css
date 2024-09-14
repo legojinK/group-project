@@ -24,6 +24,7 @@
   padding: .2rem;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  z-index: 10;
 }
 
 .animal-card .animal-card__image {
@@ -37,6 +38,15 @@
   overflow: hidden;
   background-color: lightgray;
   position: relative;
+}
+
+.animal-card .animal-card__image::after {
+  content: '';
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
 }
 
 .animal-card .animal-card__content {

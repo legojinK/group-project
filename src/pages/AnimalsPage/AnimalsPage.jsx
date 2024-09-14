@@ -10,7 +10,7 @@ const AnimalsPage = () => {
   return (
     <div className="animals-page">
       <div className="animals-page-title">
-        <span>입양대상 동물</span>
+        <span>보호 중인 동물</span>
       </div>
       <div className="animals-page-content">
         <div className="animals-page-instruction-box">
