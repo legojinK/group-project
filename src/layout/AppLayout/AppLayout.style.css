@@ -11,12 +11,9 @@
 
 .navbar-brand {
   padding: 0;
-}
-
-.navbar-brand {
+  margin: 0;
   display: flex;
   align-items: center;
-  padding-right: 40px;
 }
 
 .navbar-toggler {
@@ -38,13 +35,20 @@
   border-radius: 20px;
   padding: 0 20px;
 }
-/*  */
+
+.me-auto.my-2.my-lg-0.navbar-nav.navbar-nav-scroll{
+  width: 100%;
+  padding-right: 65.23px;
+  display: flex;
+  justify-content: center;
+}
+
 .nav-item.dropdown:hover .dropdown-toggle.nav-link {
   color: #009688;
 }
 
 .dropdown-toggle.nav-link {
-  font-size: 20px;
+  font-size: 24px;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
   color: #4db6ac;
 }
@@ -107,7 +111,7 @@
   margin-left: 10px;
   color: #009688;
   cursor: pointer;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 400;
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
 }
@@ -141,7 +145,8 @@
 
 .navbar-login {
   padding: 0 20px;
-  height: 30px;
+  width: 100px;
+  height: 40px;
   background-color: transparent;
   border-radius: 30px;
   border: 1px solid #009688;
