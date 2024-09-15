@@ -6,8 +6,8 @@
   font-style: normal;
 }
 
-.container-custom {
-  max-width: 1000px !important;
+.banner-box {
+  max-width: 800px !important;
   margin: 0 auto;
 }
 

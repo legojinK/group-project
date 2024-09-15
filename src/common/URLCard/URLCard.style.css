@@ -3,12 +3,12 @@
   flex-direction: column;
   align-items: flex-start;
   row-gap:.5rem;
-  background-color: #009688;
+  background-color: #26a69a;
   padding: 2rem 2rem;
   border-radius: 20px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, .2);
   position: relative;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 
 .animal-edu-url::before {
@@ -26,16 +26,14 @@
 
 .edu-url-title {
   font-family: 'Ownglyph_meetme-Rg', sans-serif;
-  font-size: 2.5rem;
-  letter-spacing: .1rem;
+  font-size: 1.7rem;
   font-weight: 500;
   color: rgb(236, 236, 236);
 }
 
 .edu-url-content {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: .1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: rgb(236, 236, 236);
   margin-bottom: 1.5rem;
@@ -81,16 +79,7 @@
     bottom: -55px;
   }
 
-  .edu-url-title {
-    font-size: 2rem;
-  }
-
-  .edu-url-content {
-    font-size: 1rem;
-  }
-
   .animal-edu-url button {
-    font-size: 1rem;
     padding: .5rem 1.5rem;
   }
 }

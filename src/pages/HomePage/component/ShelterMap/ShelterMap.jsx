@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./ShelterMap.style.css";
 import MapList from "@/map/ListMap/ListMap";
 import { useShelterList } from "@/hooks/useShelterList";
+import { Container } from "react-bootstrap";
 
 const ShelterMap = () => {
   const { data } = useShelterList();
@@ -19,7 +20,7 @@ const ShelterMap = () => {
   }));
 
   return (
-    <div>
+    <Container>
       <div className="home-animal-search">
         <div className="home-animal-search-description">
           <div className="home-animal-search-title">동물보호소</div>
@@ -56,7 +57,7 @@ const ShelterMap = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

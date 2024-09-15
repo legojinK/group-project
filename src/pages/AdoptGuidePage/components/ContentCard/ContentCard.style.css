@@ -1,4 +1,4 @@
-.card {
+.content-card .card {
   border: none;
   margin-bottom: 10px;
   background-color: #e0f2f1;
@@ -6,11 +6,11 @@
   border-radius: 20px;
 }
 
-.card-body {
+.content-card .card-body {
   min-height: 148px;
 }
 
-.card-title.h5 {
+.content-card .card-title.h5 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@
   font-size: 30px;
 }
 
-.card-text {
+.content-card .card-text {
   font-size: 16px;
   font-family: 'Roboto', sans-serif;
   color: #009986;
@@ -27,18 +27,18 @@
   align-items: center;
 }
 
-.card:hover {
+.content-card .card:hover {
   background-color: #f2fffe;
 }
 
 
 
 @media (max-width: 768px) {
-  .card-body {
+  .content-card .card-body {
     display: flex;
     min-height: 0;
   }
-  .card-title.h5 {
+  .content-card .card-title.h5 {
     font-size: 40px;
     margin: 0 20px 0 0;
   }

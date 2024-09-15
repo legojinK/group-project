@@ -60,7 +60,7 @@ const AnimalCard = ({ animal }) => {
         }}
       >
         <div className="favorite-icon" onClick={handleFavoriteClick}>
-          {isFavorite ? <FaHeart color="red" /> : <FaRegHeart />}
+          {isFavorite ? <FaHeart color="red" /> : <FaRegHeart color="red" />}
         </div>
       </div>
       <div className="animal-card__content">

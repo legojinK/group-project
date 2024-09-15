@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import AnimalCard from "@/common/AnimalCard/AnimalCard";
 import { useAnimalCardDataQuery } from "@/hooks/useAnimalCardData";
 import { useDispatch } from "react-redux";
+import { Container } from "react-bootstrap";
 import { setTotalCount, resetFilters } from "@/store/redux/animalSearchSlice";
 
 const AnimalCardWrapper = () => {
@@ -88,20 +89,23 @@ const AnimalCardWrapper = () => {
   ]);
 
   if (isError) {
-    return <div className="error-box">에러 발생: {error.message}</div>;
+    console.log("에러 발생: ", error.message)
+    return <div className="error-box">데이터에 오류가 발생했습니다.</div>;
   }
 
   return (
     <div className="animal-card-container">
-      <div className="animal-card-count">
-        총{" "}
-        <span className="count-number">
-          {animalCardData?.totalCount === 0
-            ? 0
-            : animalCardData?.totalCount?.toLocaleString()}
-        </span>
-        건
-      </div>
+      <Container>
+        <div className="animal-card-count">
+          총{" "}
+          <span className="count-number">
+            {animalCardData?.totalCount === 0
+              ? 0
+              : animalCardData?.totalCount?.toLocaleString()}
+          </span>
+          건
+        </div>
+      </Container>
       <div className="animal-card-wrapper">
         {isLoading || isPageLoading
           ? Array.from({ length: 12 }).map((_, index) => (
