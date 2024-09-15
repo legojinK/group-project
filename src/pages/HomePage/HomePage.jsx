@@ -12,6 +12,7 @@ const HomePage = () => {
       <HomeAnimalSearch />
       <ShelterMap/>
       <Information />
+
     </div>
   );
 };

@@ -15,23 +15,15 @@ const MapList = ({ shelters }) => {
       return;
     }
 
-    if (!window.kakao || !window.kakao.maps) {
-      console.error("Kakao Maps API is not loaded");
-      return;
-    }
-
     const options = {
-      center: new window.kakao.maps.LatLng(
-        shelters[0]?.lat || 0,
-        shelters[0]?.lng || 0
-      ),
+      center: new kakao.maps.LatLng(shelters[0]?.lat || 0, shelters[0]?.lng || 0),
       level: 10,
     };
 
-    const kakaoMap = new window.kakao.maps.Map(container, options);
+    const kakaoMap = new kakao.maps.Map(container, options);
     setMap(kakaoMap);
 
-    const markers = shelters.map((shelter) => {
+    const markers = shelters.map(shelter => {
       const markerPosition = new kakao.maps.LatLng(shelter.lat, shelter.lng);
       const marker = new kakao.maps.Marker({
         position: markerPosition,
@@ -42,8 +34,9 @@ const MapList = ({ shelters }) => {
     });
 
     return () => {
-      markers.forEach((marker) => marker.setMap(null));
+      markers.forEach(marker => marker.setMap(null));
     };
+
   }, [shelters]);
 
   return (
