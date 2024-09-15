@@ -2,8 +2,9 @@
   border: none;
   margin-bottom: 10px;
   background-color: #e0f2f1;
-  border: 1px solid #009688;
+  border: 1px dotted #009688;
   border-radius: 20px;
+  transition: 0.5s ease;
 }
 
 .content-card .card-body {
@@ -29,6 +30,9 @@
 
 .content-card .card:hover {
   background-color: #f2fffe;
+  transform: scale(1.08);
+  z-index: 5;
+  
 }
 
 

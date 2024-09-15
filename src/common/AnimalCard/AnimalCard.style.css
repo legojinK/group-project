@@ -7,6 +7,7 @@
   overflow: hidden;
   cursor: pointer;
   /* box-shadow: 3px 10px 10px rgb(182, 186, 186, 10); */
+  transition: 0.3s ease;
 }
 
 .animal-card::before {
@@ -22,6 +23,11 @@
 
 .animal-card:hover::before {
   border: 1px solid #009688;
+}
+
+.animal-card:hover {
+  transform: scale(1.11);
+  z-index: 15; 
 }
 
 .animal-card:hover .animal-card-regisDate{

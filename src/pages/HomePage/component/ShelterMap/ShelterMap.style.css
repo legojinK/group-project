@@ -57,13 +57,13 @@
   margin: 0;
   font-size: 23px;
   text-align: left; 
-  color: #045962;
+  color: #0a99a9;
 }
 
 .shelter-item p {
   margin: 5px 0 0;
   text-align: left; 
-  color: #27848e;
+  color: #26565b;
 }
 
 .more-button {
@@ -71,7 +71,7 @@
   margin-top: 20px;
   padding: 8px 20px;
   font-size: 20px;
-  background-color: #76bcc4;
+  background-color: #51b5c0;
   color: white;
   border: none;
   border-radius: 15px;
@@ -93,7 +93,23 @@
 }
 
 .shelter-item.highlight .name-address h2 {
-  color: #53ada2; 
-  font-weight: bold;
+  color: #74bcbe; 
+}
+
+.home-shelter-title {
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #009688;
+  margin: 0;
+}
+
+.home-shelter-search{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.home-shelter-box{
+  margin-bottom: 50px;
 }
 
