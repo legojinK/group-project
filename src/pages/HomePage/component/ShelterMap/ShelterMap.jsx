@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ShelterMap.style.css";
 import MapList from "@/map/ListMap/ListMap";
@@ -11,7 +11,7 @@ const ShelterMap = () => {
   const list = data?.items?.item || [];
 
   const shelters = list.map((shelter) => ({
-    id: `shelter-${shelter.careNm.replace(/\s+/g, "-")}`, 
+    id: `shelter-${shelter.careNm.replace(/\s+/g, "-")}`,
     careNm: shelter.careNm,
     careAddr: shelter.careAddr,
     lat: shelter.lat,
@@ -31,27 +31,29 @@ const ShelterMap = () => {
       <div className="shelter-map">
         <MapList shelters={shelters} hoveredShelterId={hoveredShelterId} />
         <div>
-        <div className="scrollable-box">
-          <ul className="shelter-list">
-            {list.map((shelter) => (
-              <li
-                key={shelter.careNm}
-                id={`shelter-${shelter.careNm.replace(/\s+/g, "-")}`}
-                className={`shelter-item ${hoveredShelterId === `shelter-${shelter.careNm.replace(/\s+/g, "-")}` ? "highlight" : ""}`}
-                onMouseEnter={() => setHoveredShelterId(`shelter-${shelter.careNm.replace(/\s+/g, "-")}`)}
-                onMouseLeave={() => setHoveredShelterId(null)} 
-              >
-                <div className="name-address">
-                  <h2>{shelter.careNm}</h2>
-                  <p>{shelter.careAddr}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <Link to="/shelters">
-          <button className="more-button">보호소 더보기 ➜</button>
-        </Link>
+          <div className="scrollable-box">
+            <ul className="shelter-list">
+              {list.map((shelter) => (
+                <li
+                  key={shelter.careNm}
+                  id={`shelter-${shelter.careNm.replace(/\s+/g, "-")}`}
+                  className={`shelter-item ${hoveredShelterId === `shelter-${shelter.careNm.replace(/\s+/g, "-")}` ? "highlight" : ""}`}
+                  onMouseEnter={() => setHoveredShelterId(`shelter-${shelter.careNm.replace(/\s+/g, "-")}`)}
+                  onMouseLeave={() => setHoveredShelterId(null)}
+                >
+                  <Link to={`/shelters/${encodeURIComponent(shelter.careNm)}`}>
+                    <div className="name-address">
+                      <h2>{shelter.careNm}</h2>
+                      <p>{shelter.careAddr}</p>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Link to="/shelters">
+            <button className="more-button">보호소 더보기 ➜</button>
+          </Link>
         </div>
       </div>
     </div>
