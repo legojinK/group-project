@@ -17,7 +17,7 @@
   border-radius: 20px;
   position: absolute;
   top: 0;
-  z-index: 20;
+  z-index: 9;
 }
 
 .animal-card:hover::before {
