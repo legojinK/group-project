@@ -5,6 +5,7 @@ import AnimalCard from "@/common/AnimalCard/AnimalCard";
 import { useAnimalCardDataQuery } from "@/hooks/useAnimalCardData";
 import { useDispatch } from "react-redux";
 import { setTotalCount } from "@/store/redux/animalSearchSlice";
+import { Container } from "react-bootstrap";
 
 const AnimalCardWrapper = () => {
   const dispatch = useDispatch();
@@ -87,13 +88,17 @@ const AnimalCardWrapper = () => {
 
   return (
     <div className="animal-card-container">
-      <div className="animal-card-count">
-        총{" "}
-        <span className="count-number">
-          {animalCardData?.totalCount === 0 ? 0 : animalCardData?.totalCount?.toLocaleString()}
-        </span>
-        건
-      </div>
+      <Container>
+        <div className="animal-card-count">
+          총{" "}
+          <span className="count-number">
+            {animalCardData?.totalCount === 0
+              ? 0
+              : animalCardData?.totalCount?.toLocaleString()}
+          </span>
+          건
+        </div>
+      </Container>
       <div className="animal-card-wrapper">
         {isLoading || isPageLoading
           ? Array.from({ length: 12 }).map((_, index) => (

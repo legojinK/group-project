@@ -22,7 +22,7 @@ const AnimalsPage = () => {
 
       <div className="animals-page-content">
         <Container>
-          <h1 className="content-title">상세 검색</h1>
+          <h1 className="content-title">동물 상세 검색</h1>
           <AnimalFilter />
           <div className="animals-page-instruction-box">
             <FontAwesomeIcon
