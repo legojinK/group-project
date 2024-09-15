@@ -54,7 +54,7 @@
 .animal-card .animal-card__content {
   height: 100%;
   padding: 1rem;
-  background-color: white;
+  background-color: #fff;
 }
 
 .animal-card .animal-card__content .card__type-age {
