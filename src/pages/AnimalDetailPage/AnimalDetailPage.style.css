@@ -72,27 +72,25 @@
   }
 }
 
-/* css */
+/* Form css */
 
-.col-lg-4.col-md-6 {}
-
-.mb-3 {
+.animal-detail .mb-3 {
   padding: 0px;
   margin: 0 0 10px 0 !important;
 }
 
-.form-label {
+.animal-detail .form-label {
   margin: 0;
   color: #009688;
   font-weight: 600;
 }
 
-.form-control {
+.animal-detail .form-control {
   border-radius: 20px;
   border: 1px solid #009688;
 }
 
-.form-control:focus {
+.animal-detail .form-control:focus {
   box-shadow: none;
   border: 1px solid #009688;
 }
