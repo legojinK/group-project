@@ -39,7 +39,7 @@ const ShelterList = () => {
     pageNumbers.push(i);
   }
 
-  if (items.length === 0) return <p>No extra information found.</p>;
+  // if (items.length === 0) return <div className="shelter-error">데이터 없음.</div>;
 
   return (
     <div>

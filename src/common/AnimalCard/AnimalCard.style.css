@@ -8,7 +8,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.5s ease;
-
+  box-shadow: 5px 5px 5px 4px #a8c4c2;
 }
 
 .animal-card:hover {
@@ -53,13 +53,13 @@
   height: 50px;
   position: absolute;
   bottom: 0;
-  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(251, 254, 255));
 }
 
 .animal-card .animal-card__content {
   height: 100%;
   padding: 1rem;
-  background-color: white;
+  background-color: #fff;
 }
 
 .animal-card .animal-card__content .card__type-age {
