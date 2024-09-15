@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const Information = () => {
   return (
-    <Container>
+    <Container className="information-home">
       <Row>
         <Col xs={12} lg={6}>
           <div className="info-urlcard">
