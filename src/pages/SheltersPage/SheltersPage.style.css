@@ -2,6 +2,37 @@ body {
   background-color: #e0f2f1;
 }
 
+.shelter-des h2 {
+  margin: 0;
+}
+
+.page-nav {
+  padding: 10px 20px;
+  margin: 0;
+  background-color: #b2dfdb;
+  color: #004d40;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.shelter-img-box {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 300px;
+  overflow: hidden;
+}
+
+.img {
+  min-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  top: 0;
+  transition: all 200ms;
+}
+
 .shelter-list {
   display: flex;
   flex-direction: column;
@@ -98,7 +129,7 @@ body {
 }
 
 .shelter-paw {
-margin-top: 20px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,14 +152,13 @@ margin-top: 20px;
 
 .shelter-des {
   color: #bdf3ee;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 @media (max-width: 600px) {
   .shelter-title {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
   }
 
   .shelter-des {
