@@ -14,9 +14,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: red;
+  color: #009688;
 }
 
 .skeleton-card {

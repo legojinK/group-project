@@ -68,7 +68,8 @@ const AnimalCardSlider = () => {
 
   // 에러 발생 시
   if (isError) {
-    return <div className="error-box">에러 발생: {error.message}</div>;
+    console.log("에러 발생: ", error.message)
+    return <div className="error-box">데이터에 오류가 발생했습니다.</div>;
   }
 
   return (
