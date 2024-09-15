@@ -50,6 +50,18 @@ const animalSearchSlice = createSlice({
     },
     setPageNo(state, action) {
       state.pageNo = action.payload;
+    },
+    resetFilters(state) {
+      state.selectedDateFrom = initialState.selectedDateFrom;
+      state.selectedDateTo = initialState.selectedDateTo;
+      state.selectedSido = initialState.selectedSido;
+      state.selectedSigungu = initialState.selectedSigungu;
+      state.selectedShelter = initialState.selectedShelter;
+      state.selectedKind = initialState.selectedKind;
+      state.selectedDetailKind = initialState.selectedDetailKind;
+      state.selectedNeuter = initialState.selectedNeuter;
+      state.updateData = initialState.updateData;
+      state.totalCount = initialState.totalCount;
     }
   },
 });
@@ -66,6 +78,7 @@ export const {
   setUpdateData,
   setTotalCount,
   setPageNo,
+  resetFilters,
 } = animalSearchSlice.actions;
 
 export default animalSearchSlice.reducer;

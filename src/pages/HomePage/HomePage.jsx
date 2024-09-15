@@ -3,6 +3,8 @@ import Banner from "./component/Banner/Banner";
 import "./HomePage.style.css";
 import HomeAnimalSearch from "./component/HomeAnimalSearch/HomeAnimalSearch";
 import { Container } from "react-bootstrap";
+import Information from "./component/Information/Information";
+import ShelterMap from "./component/ShelterMap/ShelterMap";
 
 const HomePage = () => {
   return (
@@ -28,6 +30,8 @@ const HomePage = () => {
       <div className="div-empty"></div>
       <HomeAnimalSearch />
       <Banner />
+      <ShelterMap/>
+      <Information />
     </div>
   );
 };

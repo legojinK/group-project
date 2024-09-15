@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import store from "./store/redux/store";
 import { Provider } from "react-redux";
 import AnimalEduPage from "./pages/AnimalEduPage/AnimalEduPage";
+import ShelterDetailPage from "./pages/ShelterDetailPage/ShelterDetailPage";
 
 function App() {
   return (
@@ -21,11 +22,13 @@ function App() {
         <Route path="/" element={<AppLayout />}>
           {/* 메인 페이지 */}
           <Route index element={<HomePage />} />
+
           {/* 로그인 페이지 */}
           <Route path="login" element={<LoginPage />} />
           <Route path="guide" element={<AdoptGuidePage />} />
           <Route path="edu" element={<AnimalEduPage />} />
           <Route path="shelters" element={<SheltersPage />} />
+          <Route path="shelters/:careNm" element={<ShelterDetailPage />} />
 
           <Route path="animals">
             {/* 동물 리스트 페이지 */}

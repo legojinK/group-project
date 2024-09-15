@@ -38,12 +38,12 @@ const Pagination = () => {
           pageClassName="react-paginate-page-custom"
           breakClassName="break-me"
           breakLabel="..."
-          nextLabel=">"
+          nextLabel="▶"
           onPageChange={handlePageClick}
-          pageRangeDisplayed={2}
+          pageRangeDisplayed={4}
           marginPagesDisplayed={1}
           pageCount={pageCount}
-          previousLabel="<"
+          previousLabel="◀"
           renderOnZeroPageCount={null}
           activeClassName="selected"
           disabledClassName="disabled"

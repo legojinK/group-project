@@ -3,6 +3,7 @@ import "./AdoptGuidePage.style.css";
 import { Col, Container, Row } from "react-bootstrap";
 import ContentCard from "./components/ContentCard/ContentCard";
 
+// eslint-disable-next-line
 const welcomeMessege = {
   title: "동물을 입양해보세요!",
   content:
@@ -50,6 +51,7 @@ const AdoptGuidePage = () => {
         <img
           className="img"
           src="https://www.animal.go.kr/front/images/contents/headline_img1.png"
+          alt="guide-title-img"
         />
       </div>
       <div className="guide-content-box">

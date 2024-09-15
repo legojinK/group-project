@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AnimalCardSlider.style.css";
-import { useAnimalCardDataQuery } from "@/hooks/useAnimalCardData";
+import { useMainCardDataQuery } from "@/hooks/useMainCardData";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import AnimalCard from "../../AnimalCardComp/AnimalCard";
@@ -51,11 +51,12 @@ const AnimalCardSlider = () => {
 
   // useAnimalCardDataQuery를 사용하여 유기동물 데이터 조회
   const {
-    data: AnimalCardData,
+    data: MainCardData,
     isLoading: isMainLoading,
     isError,
     error,
-  } = useAnimalCardDataQuery({
+    refetch: refetchMainCardData,
+  } = useMainCardDataQuery({
     selectedDateFrom,
     selectedDateTo,
     selectedSido,
@@ -64,7 +65,12 @@ const AnimalCardSlider = () => {
     selectedKind,
     selectedDetailKind,
   });
-  console.log("AnimalCardData", AnimalCardData);
+  console.log("MainCardData", MainCardData);
+
+  useEffect(() => {
+    refetchMainCardData();
+    console.log("data refetching");
+  }, [refetchMainCardData]);
 
   // 에러 발생 시
   if (isError) {
@@ -85,8 +91,7 @@ const AnimalCardSlider = () => {
         ? Array.from({ length: 12 }).map((_, index) => (
             <div key={index} className="skeleton-card"></div>
           ))
-        : AnimalCardData.items.item &&
-          AnimalCardData.items.item.map((animal, index) => {
+        : MainCardData?.items?.item?.map((animal, index) => {
             return <AnimalCard animal={animal} key={index} />;
           })}
     </Carousel>
