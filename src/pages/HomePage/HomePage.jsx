@@ -25,9 +25,9 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <Banner />
       <div className="div-empty"></div>
       <HomeAnimalSearch />
+      <Banner />
     </div>
   );
 };
