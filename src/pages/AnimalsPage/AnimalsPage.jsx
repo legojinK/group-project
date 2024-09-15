@@ -20,10 +20,6 @@ const AnimalsPage = () => {
         />
       </div>
 
-      {/* <div className="animals-page-title">
-        <span>보호 중인 동물</span>
-      </div> */}
-
       <div className="animals-page-content">
         <Container>
           <h1 className="content-title">상세 검색</h1>

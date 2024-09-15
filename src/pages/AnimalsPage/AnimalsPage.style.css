@@ -105,9 +105,3 @@
     font-size: 3rem;
   }
 }
-
-@media (min-width: 992px) {
-  .img {
-    top: 50px;
-  }
-}
