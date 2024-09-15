@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* padding: 1rem 0 2rem 0; */
+  background-color: transparent !important;
 }
 
 .animal-card-container .animal-card-count {
