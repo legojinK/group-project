@@ -1,0 +1,56 @@
+/* 로그인 페이지 전체 컨테이너 */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #e0f2f1;
+}
+/* 로그인 폼 카드 스타일 */
+.login-card {
+    background-color: #eef5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #004d40;
+}
+
+/* 라벨 텍스트 스타일 */
+.login-label {
+    color: #004d40;
+}
+
+/* 입력 필드 스타일 */
+.form-control {
+    border: 2px solid #004d40;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+/* 체크박스와 텍스트 색상 */
+.form-check-label {
+    color: #004d40;
+}
+
+/* 버튼 컨테이너 스타일 */
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* 버튼 스타일 */
+.login-button {
+    background-color: #00796b;
+    border-color: #00796b;
+    width: auto;
+}
+
+.login-button:hover {
+    background-color: #004d40;
+    border-color: #004d40;
+}
+
+/* 폼 텍스트 스타일 */
+.text-muted {
+    color: #b2dfdb !important;
+}
