@@ -20,10 +20,10 @@ const ShelterMap = () => {
   }));
 
   return (
-    <Container>
-      <div className="home-animal-search">
+    <Container className="home-shelter-box">
+      <div className="home-shelter-search">
         <div className="home-animal-search-description">
-          <div className="home-animal-search-title">동물보호소</div>
+          <div className="home-shelter-title">동물보호소</div>
           <div className="home-animal-search-content">
             전국의 동물보호소 정보를 확인해 보세요.
           </div>

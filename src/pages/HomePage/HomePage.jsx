@@ -2,9 +2,10 @@ import React from "react";
 import Banner from "./component/Banner/Banner";
 import "./HomePage.style.css";
 import HomeAnimalSearch from "./component/HomeAnimalSearch/HomeAnimalSearch";
-import { Container } from "react-bootstrap";
 import Information from "./component/Information/Information";
 import ShelterMap from "./component/ShelterMap/ShelterMap";
+import { faPaw } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
         </div>
         <div className="home-content-area">
           <div className="home-content-box">
+          <FontAwesomeIcon icon={faPaw} className="home-paw"/>
             <h1>동물을 입양한 당신이 자랑스럽습니다!</h1>
             <p>
               개나 고양이를 키우고 싶다면 유기동물 보호시설에서 보호하고 있는
