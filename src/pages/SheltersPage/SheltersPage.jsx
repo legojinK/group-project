@@ -7,7 +7,7 @@ import { useShelterQuery } from "@/hooks/useShelter";
 
 const ShelterList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const { data, isLoading, isError } = useShelterQuery(currentPage);
+  const { data } = useShelterQuery(currentPage);
 
   const items = data?.items?.item || [];
   const totalItems = data?.totalCount || 0;
@@ -25,14 +25,6 @@ const ShelterList = () => {
   console.log("Current Page:", currentPage);
   console.log("Fetched Data:", data);
 
-  if (isLoading) {
-    return <div>로딩중...</div>;
-  }
-
-  if (isError) {
-    return <div>에러</div>;
-  }
-
   const pageNumbers = [];
   const maxPagesToShow = 5;
   let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
@@ -49,6 +41,15 @@ const ShelterList = () => {
   if (items.length === 0) return <p>No extra information found.</p>;
 
   return (
+    <div>
+      <div>
+      <h6 className="page-nav">
+        동물보호소 &nbsp; &gt; &nbsp; <strong>동물보호소 조회</strong>
+      </h6>
+      <div className="animals-page-title">
+        <span>동물보호소 조회</span>
+      </div>
+      </div>
     <div className="shelter-list">
       <div className="shelter-textbox">
         <div className="shelter-paw">
@@ -58,7 +59,17 @@ const ShelterList = () => {
         </div>
         <h2 className="shelter-des">전국의 동물보호소 정보를 확인해 보세요</h2>
       </div>
+      <div className="animal-card-count">
+        총{" "}
+        <span className="count-number">
+          {totalItems === 0
+            ? 0
+            : totalItems?.toLocaleString()}
+        </span>
+        건
+      </div>
       <div className="shelter-grid">
+      
         <div className="shelter-cards">
           {items.map((info) => {
             if (!info || !info.careNm) {
@@ -96,6 +107,7 @@ const ShelterList = () => {
           ▶
         </button>
       </div>
+    </div>
     </div>
   );
 };

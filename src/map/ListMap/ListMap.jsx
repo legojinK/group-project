@@ -3,8 +3,9 @@ import "./ListMap.style.css";
 
 const { kakao } = window;
 
-const MapList = ({ shelters }) => {
+const MapList = ({ shelters, hoveredShelterId }) => {
   const [map, setMap] = useState(null);
+  const [markers, setMarkers] = useState([]);
 
   useEffect(() => {
     if (!shelters.length) return;
@@ -23,21 +24,57 @@ const MapList = ({ shelters }) => {
     const kakaoMap = new kakao.maps.Map(container, options);
     setMap(kakaoMap);
 
-    const markers = shelters.map(shelter => {
+    const createdMarkers = shelters.map(shelter => {
       const markerPosition = new kakao.maps.LatLng(shelter.lat, shelter.lng);
       const marker = new kakao.maps.Marker({
         position: markerPosition,
       });
 
+      const infowindow = new kakao.maps.InfoWindow({
+        position: markerPosition,
+        content: `
+          <div class="info-window">
+            <h3 class="info-window-title">${shelter.careNm}</h3>
+            <p class="info-window-address">${shelter.careAddr}</p>
+          </div>
+        `,
+      });
+      
+
+      kakao.maps.event.addListener(marker, 'mouseover', () => {
+        infowindow.open(kakaoMap, marker);
+      });
+
+      kakao.maps.event.addListener(marker, 'mouseout', () => {
+        infowindow.close();
+      });
+
       marker.setMap(kakaoMap);
-      return marker;
+      return { marker, infowindow };
     });
 
+    setMarkers(createdMarkers);
+
     return () => {
-      markers.forEach(marker => marker.setMap(null));
+      createdMarkers.forEach(({ marker }) => marker.setMap(null));
     };
 
   }, [shelters]);
+
+  useEffect(() => {
+    if (!hoveredShelterId || !markers.length) return;
+
+    const matchingShelter = shelters.find(shelter => shelter.id === hoveredShelterId);
+    const matchingMarker = markers[shelters.findIndex(shelter => shelter.id === hoveredShelterId)];
+
+    if (matchingShelter && matchingMarker) {
+      matchingMarker.infowindow.open(map, matchingMarker.marker);
+    }
+
+    return () => {
+      matchingMarker?.infowindow.close();
+    };
+  }, [hoveredShelterId, markers, map, shelters]);
 
   return (
     <div className="map-list">
