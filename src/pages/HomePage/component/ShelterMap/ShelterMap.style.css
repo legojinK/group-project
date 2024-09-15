@@ -82,3 +82,9 @@
   gap: 50px;
   margin-bottom: 50px;
 }
+
+.shelter-item.highlight .name-address h2 {
+  color: #53ada2; 
+  font-weight: bold;
+}
+

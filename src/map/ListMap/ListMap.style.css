@@ -10,3 +10,24 @@
   border-radius: 30px;
   border: solid 1px rgb(95, 131, 126);
 }
+
+.info-window {
+  padding: 10px;
+  font-size: 13px;
+  width: 200px;
+}
+
+.info-window-title {
+  font-family: "Ownglyph_meetme-Rg", sans-serif;
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+}
+
+.info-window-address {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 0px;
+}
+

@@ -8,27 +8,16 @@ import { useShelterDetails } from "@/hooks/useShelterDetails";
 
 const ShelterDetailPage = () => {
   const { careNm } = useParams();
-  const { data, isLoading, isError, error } = useShelterDetails({careNm});
-
-  console.log("dddd",data)
-
-  if (isLoading) {
-    return <div>Loading shelter details...</div>;
-  }
-
-  if (isError) {
-    console.error("Error fetching shelter details:", error);
-    return <div>Error loading shelter details or shelter not found.</div>;
-  }
+  const { data} = useShelterDetails({careNm});
 
   if (!data || !data.items || !data.items.item || !data.items.item.length) {
-    return <div>보호소를 찾지 못했습니다.</div>;
+    return <div></div>;
   }
 
   const shelter = data.items.item.find(item => item.careNm === careNm);
 
   if (!shelter) {
-    return <div>보호소에 관한 데이터를 찾지 못했습니다</div>;
+    return <div className="shelter-error">보호소에 관한 데이터를 찾지 못했습니다</div>;
   }
 
   return (
@@ -64,8 +53,6 @@ const ShelterDetailPage = () => {
         <p><FontAwesomeIcon icon={faShopLock} /> <strong>격리실:</strong> {shelter.quarabtineCnt}</p>
         <p><FontAwesomeIcon icon={faBowlFood} /> <strong>사료 보관실:</strong> {shelter.feedCnt}</p>
         </div>
-        <h3>우리 보호소의 동물친구들</h3>
-        <div className="shelter-animals"></div>
       </div>
 
       <div className="shelter-location">
