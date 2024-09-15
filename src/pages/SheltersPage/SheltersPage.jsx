@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SheltersPage.style.css";
 import ShelterCard from "../../common/ShelterCard/ShelterCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { useShelterQuery } from "@/hooks/useShelter";
+import ShelterFilter from "./component/ShelterFilter/ShelterFilter";
+import { useSelector } from "react-redux";
 
 const ShelterList = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const { data, isLoading, isError } = useShelterQuery(currentPage);
+  const [care_nm, setCareNm] = useState("");
+  const shelterList = useSelector((state) => state.shelter.shelterList);
+  const { data, isLoading, isError } = useShelterQuery({
+    currentPage,
+    care_nm,
+  });
+
+  useEffect(() => {
+    if (shelterList) {
+      console.log("pageShelterList:", shelterList);
+    }
+  }, [shelterList]);
 
   const items = data?.items?.item || [];
   const totalItems = data?.totalCount || 0;
@@ -58,14 +71,15 @@ const ShelterList = () => {
         </div>
         <h2 className="shelter-des">전국의 동물보호소 정보를 확인해 보세요</h2>
       </div>
+      <ShelterFilter />
       <div className="shelter-grid">
         <div className="shelter-cards">
           {items.map((info) => {
             if (!info || !info.careNm) {
               console.error("Invalid item:", info);
-              return null; 
+              return null;
             }
-            console.log("Rendering card for:", info.careNm);
+            // console.log("Rendering card for:", info.careNm);
             return <ShelterCard key={info.careNm} extraInfo={info} />;
           })}
         </div>
@@ -82,7 +96,9 @@ const ShelterList = () => {
         {pageNumbers.map((number) => (
           <button
             key={number}
-            className={`pagination-button ${currentPage === number ? "active" : ""}`}
+            className={`pagination-button ${
+              currentPage === number ? "active" : ""
+            }`}
             onClick={() => handlePageChange(number)}
           >
             {number}
