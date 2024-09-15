@@ -1,10 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { setUpdateData } from "./animalSearchSlice";
 
 const initialState = {
   selectedSido: "",
   selectedSigungu: "",
   selectedShelter: "",
   shelterList: [],
+  updateData: false,
 };
 
 export const setShelterList = createAsyncThunk(
@@ -27,6 +29,9 @@ const shelterSlice = createSlice({
     setSelectedShelter(state, action) {
       state.selectedShelter = action.payload;
     },
+    setUpdateData(state, action) {
+      state.updateData = !state.updateData;
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(setShelterList.fulfilled, (state, action) => {
