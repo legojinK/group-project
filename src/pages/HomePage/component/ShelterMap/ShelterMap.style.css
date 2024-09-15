@@ -43,6 +43,15 @@
   align-items: flex-start; 
 }
 
+.shelter-item a {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+.shelter-item a:hover {
+  color: #000; 
+}
+
 .shelter-item h2 {
   font-family: "Ownglyph_meetme-Rg", sans-serif;
   margin: 0;

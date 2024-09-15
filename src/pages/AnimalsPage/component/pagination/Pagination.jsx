@@ -28,6 +28,7 @@ const Pagination = () => {
   const handlePageClick = (e) => {
     const selectedPage = e.selected + 1;
     dispatch(setPageNo(selectedPage));
+    window.scrollTo({ top: 440, behavior: "smooth" });
   }
 
   return (

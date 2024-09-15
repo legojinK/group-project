@@ -3,23 +3,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem 0 2rem 0;
+  background-color: transparent !important;
 }
 
-.animal-card-count {
+.animal-card-container .animal-card-count {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 1.5rem;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  letter-spacing: .1rem;
 }
 
-.count-number {
+.animal-card-container .count-number {
   margin-left: 0.5rem;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #009688;
 }

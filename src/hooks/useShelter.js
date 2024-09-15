@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-export const useShelterQuery = ({ currentPage, care_nm }) => {
+export const useShelterQuery = ({ currentPage = 1, care_nm = "" } = {}) => {
   return useQuery({
     queryKey: ["shelterList", { currentPage, care_nm }],
     queryFn: async () => {

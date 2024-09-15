@@ -4,27 +4,29 @@
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background-color: #e0f2f1;
+    background-color: #d6e6e6;
+    padding: 20px;
 }
 /* 로그인 폼 카드 스타일 */
 .login-card {
-    background-color: #eef5f5;
+    background-color: #e0f2f1;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #004d40;
+    border-radius: 20px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    border: 1px solid #009688;
 }
 
 /* 라벨 텍스트 스타일 */
 .login-label {
-    color: #004d40;
+    color: #009688;
+    font-weight: 600;
 }
 
 /* 입력 필드 스타일 */
-.form-control {
-    border: 2px solid #004d40;
-    border-radius: 5px;
+.login-container .form-control {
     box-shadow: none;
+    border-radius: 20px;
+    border: 1px solid #009688;
 }
 
 /* 체크박스와 텍스트 색상 */
@@ -33,24 +35,35 @@
 }
 
 /* 버튼 컨테이너 스타일 */
-.button-container {
+.login-container .button-container {
     display: flex;
     justify-content: center;
 }
 
 /* 버튼 스타일 */
-.login-button {
-    background-color: #00796b;
-    border-color: #00796b;
+.login-container .login-button {
+    height: 40px;
+    padding: 0 40px;
+    background-color: #009688;
+    border-radius: 20px;
+    border-color: #009688;
     width: auto;
+    margin-top: 20px;
 }
 
-.login-button:hover {
-    background-color: #004d40;
-    border-color: #004d40;
+.login-container .login-button:hover {
+    background-color: #4db6ac;
+    border-color: #4db6ac;
+}
+
+.login-container .login-button:active {
+    background-color: #ffffff;
+    border-color: #009688;
+    color: #009688;
 }
 
 /* 폼 텍스트 스타일 */
 .text-muted {
     color: #b2dfdb !important;
 }
+

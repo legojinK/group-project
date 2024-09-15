@@ -8,12 +8,12 @@ import "./LoginPage.style.css";
 const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loginError } = useSelector(state => state.auth);
+  const { loginError } = useSelector((state) => state.auth);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = event => {
+  const handleLogin = (event) => {
     event.preventDefault();
 
     // 로그인 로직 (이메일/비밀번호가 맞는지 체크)
@@ -31,7 +31,7 @@ const LoginPage = () => {
     <div className="login-container">
       <Container>
         <Row className="justify-content-md-center">
-          <Col xs={12} md={4}>
+          <Col xs={12} md={6} lg={4}>
             <Card className="login-card">
               <Card.Body>
                 <Form onSubmit={handleLogin}>
@@ -42,7 +42,7 @@ const LoginPage = () => {
                       placeholder="Enter email"
                       required
                       value={email}
-                      onChange={event => setEmail(event.target.value)}
+                      onChange={(event) => setEmail(event.target.value)}
                     />
                   </Form.Group>
 
@@ -53,7 +53,7 @@ const LoginPage = () => {
                       placeholder="Password"
                       required
                       value={password}
-                      onChange={event => setPassword(event.target.value)}
+                      onChange={(event) => setPassword(event.target.value)}
                     />
                   </Form.Group>
 
