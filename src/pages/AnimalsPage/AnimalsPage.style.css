@@ -2,7 +2,34 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #e0f2f1;
+  background-color: #d6e6e6;
+}
+
+.page-nav {
+  padding: 10px 20px;
+  margin: 0;
+  background-color: #b2dfdb;
+  color: #004d40;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.animals-img-box {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 300px;
+  overflow: hidden;
+}
+
+.img {
+  min-height: 300px;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  top: 0;
+  transition: all 200ms;
 }
 
 .animals-page-title {
@@ -32,7 +59,7 @@
   z-index: 1;
 }
 
-.animals-page-title > * {
+.animals-page-title>* {
   position: relative;
   z-index: 2;
 }
@@ -44,24 +71,30 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 5rem 1rem 2.5rem 1rem;
+  /* padding: 5rem 1rem 2.5rem 1rem; */
+  padding:20px;
   box-sizing: border-box;
 }
 
 .animals-page-instruction-box {
+  margin-top: 10px;
   width: 100%;
-  border: 3px solid lightgray;
-  padding: 1rem;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.2rem;
+  font-size: 16px;
   font-weight: 500;
-  margin-bottom: 2rem;
 }
 
 .animals-page-info-icon {
   color: gray;
-  font-size: 1.2rem;
+  font-size: 16px;
   margin-right: .5rem;
+}
+
+.content-title {
+  text-align: center;
+  color: #009688;
+  font-family: 'Ownglyph_meetme-Rg', sans-serif;
+  margin: 30px 0;
 }
 
 @media screen and (max-width: 992px) {

@@ -4,7 +4,7 @@ import "./ContentCard.style.css";
 
 const ContentCard = ({ item }) => {
   return (
-    <div>
+    <div className="content-card">
       <Card >
         <Card.Body>
           <Card.Title>{item.id}</Card.Title>
