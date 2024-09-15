@@ -23,14 +23,6 @@
   margin-top: 15px;
 }
 
-.shelter-detail h3 {
-  margin-bottom: 15px;
-  margin-top: 15px;
-  font-family: "Ownglyph_meetme-Rg", sans-serif;
-  font-size: 35px;
-  color: rgb(115, 173, 173);
-}
-
 .shelter-detail h2{
     margin-bottom: 20px;
     margin-top: 15px;
@@ -141,4 +133,13 @@
     display: flex;
     gap: 80px;
     margin-bottom: 15px;
+}
+
+.shelter-error{
+  margin-top: 80px;
+  text-align: center;
+  margin-bottom: 80px;
+  font-family: "Ownglyph_meetme-Rg", sans-serif;
+  font-size: 40px;
+  color: rgb(9, 154, 154);
 }
