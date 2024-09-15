@@ -1,32 +1,32 @@
 import React from "react";
 import "./AnimalCardSlider.style.css";
-import AnimalCard from "../../../../../common/AnimalCard/AnimalCard";
 import { useAnimalCardDataQuery } from "@/hooks/useAnimalCardData";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import AnimalCard from "../../AnimalCardComp/AnimalCard";
 
 // carousel breakpoint
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 1400 },
-    items: 2,
-    slidesToSlide: 2,
+    items: 4,
+    slidesToSlide: 4,
   },
   desktop: {
     breakpoint: { max: 1400, min: 1200 },
-    items: 2,
-    slidesToSlide: 2,
+    items: 4,
+    slidesToSlide: 4,
   },
   largeTablet: {
     breakpoint: { max: 1200, min: 992 },
-    items: 1,
-    slidesToSlide: 1,
+    items: 3,
+    slidesToSlide: 3,
   },
   tablet: {
     breakpoint: { max: 992, min: 768 },
-    items: 1,
-    slidesToSlide: 1,
+    items: 3,
+    slidesToSlide: 3,
   },
   mobile: {
     breakpoint: { max: 768, min: 576 },
@@ -34,7 +34,7 @@ const responsive = {
   },
   smallMobile: {
     breakpoint: { max: 576, min: 0 },
-    items: 1,
+    items: 2,
   },
 };
 
@@ -77,8 +77,7 @@ const AnimalCardSlider = () => {
       containerClass="carousel-container"
       responsive={responsive}
       infinite={true}
-      autoPlay={true}
-      centerMode={true}
+      // autoPlay={true}
       autoPlaySpeed={7000}
       itemClass="custom-carousel-item"
     >

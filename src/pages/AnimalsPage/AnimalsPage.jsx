@@ -16,7 +16,7 @@ const AnimalsPage = () => {
       <div className="animals-img-box">
         <img
           className="img"
-          src="https://www.animal.go.kr/front/images/contents/headline_img3.png"
+          src="https://www.animal.go.kr/front/images/pssrpAwards10/10_warning_5.jpg"
         />
       </div>
 

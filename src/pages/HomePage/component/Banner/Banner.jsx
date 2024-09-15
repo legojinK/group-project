@@ -22,7 +22,7 @@ const landings = [
 
 const Banner = () => {
   return (
-    <Container className="container-custom">
+    <div className="banner-box">
       <Row>
         <Carousel pause="false">
           {/* 위 데이터(landings)를 토대로 Carousel에 이미지와 텍스트 넣기 */}
@@ -39,7 +39,7 @@ const Banner = () => {
           ))}
         </Carousel>
       </Row>
-    </Container>
+    </div>
   );
 };
 
