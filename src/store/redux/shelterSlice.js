@@ -6,11 +6,19 @@ const initialState = {
   selectedSigungu: "",
   selectedShelter: "",
   shelterList: [],
+  searchedShelterList: [],
   updateData: false,
 };
 
 export const setShelterList = createAsyncThunk(
   "shelter/setShelterList",
+  async (payload, thunkAPI) => {
+    return payload;
+  }
+);
+
+export const setSearchedShelterList = createAsyncThunk(
+  "shelter/setSearchedShelterList",
   async (payload, thunkAPI) => {
     return payload;
   }
@@ -36,6 +44,9 @@ const shelterSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(setShelterList.fulfilled, (state, action) => {
       state.shelterList = action.payload;
+    });
+    builder.addCase(setSearchedShelterList.fulfilled, (state, action) => {
+      state.searchedShelterList = action.payload;
     });
   },
 });

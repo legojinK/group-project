@@ -1,26 +1,63 @@
 import React, { useEffect, useState } from "react";
 import "./SheltersPage.style.css";
+import shelterApi from "@/utils/shelterApi";
 import ShelterCard from "../../common/ShelterCard/ShelterCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { useShelterQuery } from "@/hooks/useShelter";
 import ShelterFilter from "./component/ShelterFilter/ShelterFilter";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setSearchedShelterList } from "@/store/redux/shelterSlice";
 
 const ShelterList = () => {
+  const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
-  const [care_nm, setCareNm] = useState("");
+  const [careRegNo, setCareRegNo] = useState("");
+  const [isFiltered, setIsFiltered] = useState(false);
   const shelterList = useSelector((state) => state.shelter.shelterList);
-  const { data, isLoading, isError } = useShelterQuery({
+  const searchedShelterList = useSelector(
+    (state) => state.shelter.searchedShelterList
+  );
+  const {
+    data,
+    isLoading,
+    isError,
+    refetch: refetchShelterQuery,
+  } = useShelterQuery({
     currentPage,
-    care_nm,
+    careRegNo,
   });
 
-  useEffect(() => {
-    if (shelterList) {
-      console.log("pageShelterList:", shelterList);
+  //shelterList가 변경되면 shelterList.careRegNo를 각각 useShelerQuery에 대입하여 searchedShelterList를 업데이트
+  const fetchSearchedShelterList = async () => {
+    console.log("shelterList:", shelterList);
+    try {
+      if (shelterList.length === 0) {
+        return;
+      }
+      const result = await Promise.all(
+        shelterList.flatMap(async (shelter) => {
+          const { data } = await shelterApi.get(
+            `/shelterInfo?care_nm=${shelter.careNm}&serviceKey=${process.env.REACT_APP_API_KEY}&_type=json`
+          );
+          return data.response.body.items.item;
+        })
+      );
+      console.log("result:", result);
+      dispatch(setSearchedShelterList(result));
+    } catch (error) {
+      console.error(error);
     }
+  }
+
+  useEffect(() => {
+    console.log("shelterList:", shelterList);
+    fetchSearchedShelterList();
   }, [shelterList]);
+
+  useEffect(() => {
+    // console.log("searchedShelterList:", searchedShelterList);
+  }, [searchedShelterList]);
 
   const items = data?.items?.item || [];
   const totalItems = data?.totalCount || 0;
