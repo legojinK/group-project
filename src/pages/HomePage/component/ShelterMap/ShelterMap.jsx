@@ -30,12 +30,12 @@ const ShelterMap = () => {
         </div>
       </div>
       <div className="shelter-map">
-        <MapList shelters={shelters} hoveredShelterId={hoveredShelterId} />
+        <MapList shelters={shelters} hoveredShelterId={hoveredShelterId} className="homepage-map"/>
         <div>
           <div className="scrollable-box">
             <ul className="shelter-list">
               {list.map((shelter) => (
-                <li
+                <li 
                   key={shelter.careNm}
                   id={`shelter-${shelter.careNm.replace(/\s+/g, "-")}`}
                   className={`shelter-item ${hoveredShelterId === `shelter-${shelter.careNm.replace(/\s+/g, "-")}` ? "highlight" : ""}`}

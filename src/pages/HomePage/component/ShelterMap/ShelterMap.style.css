@@ -1,14 +1,14 @@
 .scrollable-box {
   max-height: 338px;
-  overflow-y: auto; 
+  overflow-y: auto;
   width: 450px;
   border: 1px solid #ccc;
   padding: 5px;
   border-radius: 20px;
   background-color: #f9f9f9;
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .scrollable-box::-webkit-scrollbar {
@@ -27,42 +27,42 @@
 
 .shelter-list {
   list-style: none;
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start; 
-  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .shelter-item {
   margin-bottom: 10px;
   padding: 5px;
   border-bottom: 1px solid #ccc;
-  width: 100%; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start; 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .shelter-item a {
-  text-decoration: none; 
-  color: inherit; 
+  text-decoration: none;
+  color: inherit;
 }
 
 .shelter-item a:hover {
-  color: #000; 
+  color: #000;
 }
 
 .shelter-item h2 {
   font-family: "Ownglyph_meetme-Rg", sans-serif;
   margin: 0;
   font-size: 23px;
-  text-align: left; 
+  text-align: left;
   color: #0a99a9;
 }
 
 .shelter-item p {
   margin: 5px 0 0;
-  text-align: left; 
+  text-align: left;
   color: #26565b;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .more-button:hover {
-    background-color: #4f9ba3;
+  background-color: #4f9ba3;
 }
 
 .shelter-map {
@@ -93,7 +93,7 @@
 }
 
 .shelter-item.highlight .name-address h2 {
-  color: #74bcbe; 
+  color: #74bcbe;
 }
 
 .home-shelter-title {
@@ -104,12 +104,46 @@
   margin: 0;
 }
 
-.home-shelter-search{
+.home-shelter-search {
   margin-top: 20px;
   margin-bottom: 40px;
 }
 
-.home-shelter-box{
+.home-shelter-box {
   margin-bottom: 50px;
 }
 
+@media (max-width: 768px) {
+  .shelter-map {
+    flex-direction: column; 
+    gap: 20px;
+  }
+
+  .scrollable-box {
+    width: 100%; 
+  }
+
+  .shelter-item h2 {
+    font-size: 18px; 
+  }
+
+  .more-button {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollable-box {
+    max-height: 200px; 
+  }
+
+  .shelter-item h2 {
+    font-size: 16px; 
+  }
+
+  .more-button {
+    font-size: 16px;
+    padding: 6px 14px;
+  }
+}
